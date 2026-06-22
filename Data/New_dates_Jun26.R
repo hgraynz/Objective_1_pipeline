@@ -1,0 +1,208 @@
+
+BiocManager::install("ggtree")
+library(rhierbaps)
+library(ggtree)
+library(phytools)
+library(ape)
+
+setwd("~/Objective1_BEAST/Holly_BEAST/Holly_BEAST/New_dates")
+set.seed(1653)
+
+snp.matrix <- load_fasta("ERL06-3581_clean.core.fa")
+
+hb.results <- hierBAPS(snp.matrix, max.depth = 3, n.pops = 20, quiet = TRUE, n.extra.rounds = Inf, assignment.probs=TRUE)
+head(hb.results$partition.df)
+write.csv(hb.results$partition.df, "rhierbaps2.csv")
+
+
+hb.results$lml.list
+hb.results$cluster.assignment.prob
+write.csv(hb.results$cluster.assignment.prob, "rhierbaps2_cluster_assign_prob.csv")
+
+### Run Rhierbaps code to determine clades 
+### Then add clade information to Genome_summaries_144.csv - note 3 and 4 collapsed to 3 as Clade 1b
+
+iqtree <- read.tree("ERL06-3581_clean.core.tree")
+
+gg <- ggtree(iqtree, layout = "circular", options(ignore.negative.edge=TRUE))
+gg <- gg %<+% hb.results$partition.df
+gg <- gg + geom_tippoint(aes(color = factor(`level 3`)))
+gg
+
+
+
+
+######################################
+### adding info to fasta file headers
+######################################
+
+library(tidyverse)
+library(tidysq)
+library(seqinr)
+
+
+myfasta <- seqinr::read.fasta (file = "ERL06-3581_clean.core.fa", seqtype = "DNA", as.string = TRUE, set.attributes = FALSE)
+
+### Header csv needs to be in same order as fasta headers 
+
+# Function to sort the FASTA file by headers
+sort_fasta_by_headers <- function(input_fasta, output_fasta) {
+  
+  # Step 1: Read the FASTA file
+  fasta_data <- read.fasta(input_fasta, seqtype = "DNA", as.string = TRUE)
+  
+  # Step 2: Extract headers and sequences
+  headers <- names(fasta_data)
+  sequences <- unlist(fasta_data)
+  
+  # Step 3: Sort headers
+  sorted_headers <- sort(headers)
+  
+  # Step 4: Reorder sequences based on sorted headers
+  sorted_sequences <- sequences[match(sorted_headers, headers)]
+  
+  # Step 5: Write the sorted sequences to a new FASTA file
+  output_fasta_connection <- file(output_fasta, "w")
+  for (i in 1:length(sorted_headers)) {
+    write(paste(">", sorted_headers[i], sep=""), output_fasta_connection)
+    write(sorted_sequences[i], output_fasta_connection)
+  }
+  close(output_fasta_connection)
+  
+  cat("FASTA file sorted by headers and saved to", output_fasta, "\n")
+}
+
+### list of isolates to use - all must be present in fasta file and sorted by name
+### Clade information from Rhierbaps should be added to csv file
+
+subsetlist <- read.csv ("Genome_summaries_144.csv", header=T) 
+subsetlist <- subsetlist[order(subsetlist$Isolate.ID),]
+
+### prepare new headers
+headers <- paste(subsetlist$Isolate.ID,subsetlist$Automated_SBI, subsetlist$Island, subsetlist$Sample.type,subsetlist$Date, sep="|")
+
+### subset file
+my_fasta_sub <- myfasta [names (myfasta) %in% subsetlist$Isolate.ID]
+
+### Sort fasta file by headers
+write.fasta (sequences = my_fasta_sub, names = names (my_fasta_sub), file.out = "STEC2.fasta")
+input_fasta <- "STEC2.fasta"
+output_fasta <- "sorted_STEC2.fasta"
+sort_fasta_by_headers(input_fasta, output_fasta)
+
+
+### add dates to headers
+read_fasta("sorted_STEC2.fasta") %>%
+  mutate(name = headers) %>%
+  {
+    .x <- .
+    write_fasta(.x$sq, .x$name, "STEC_144.fasta")
+  }
+
+
+### Then subset by Rhierbaps clades
+
+### Clade 1
+### subset file
+
+subsetlist_clade1<-subsetlist[subsetlist$RB_level.1b=="1",]
+my_fasta_sub <- myfasta [names (myfasta) %in% subsetlist_clade1$Isolate.ID]
+
+### prepare new headers
+headers <- paste(subsetlist_clade1$Isolate.ID,subsetlist_clade1$Automated_SBI, subsetlist_clade1$Island, subsetlist_clade1$Sample.type,subsetlist_clade1$Date, sep="|")
+
+### Sort fasta file by headers
+write.fasta (sequences = my_fasta_sub, names = names (my_fasta_sub), file.out = "STEC2.fasta")
+input_fasta <- "STEC2.fasta"
+output_fasta <- "sorted_STEC2.fasta"
+sort_fasta_by_headers(input_fasta, output_fasta)
+
+
+### add dates to headers
+read_fasta("sorted_STEC2.fasta") %>%
+  mutate(name = headers) %>%
+  {
+    .x <- .
+    write_fasta(.x$sq, .x$name, "STEC_Clade1.fasta")
+  }
+
+### Clade 2
+### subset file
+subsetlist_clade2<-subsetlist[subsetlist$RB_level.1b=="2",]
+my_fasta_sub <- myfasta [names (myfasta) %in% subsetlist_clade2$Isolate.ID]
+
+### prepare new headers
+headers <- paste(subsetlist_clade2$Isolate.ID,subsetlist_clade2$Automated_SBI, subsetlist_clade2$Island, subsetlist_clade2$Sample.type,subsetlist_clade2$Date, sep="|")
+
+### Sort fasta file by headers
+write.fasta (sequences = my_fasta_sub, names = names (my_fasta_sub), file.out = "STEC2.fasta")
+input_fasta <- "STEC2.fasta"
+output_fasta <- "sorted_STEC2.fasta"
+sort_fasta_by_headers(input_fasta, output_fasta)
+
+
+### add dates to headers
+read_fasta("sorted_STEC2.fasta") %>%
+  mutate(name = headers) %>%
+  {
+    .x <- .
+    write_fasta(.x$sq, .x$name, "STEC_Clade2.fasta")
+  }
+
+### Clade 3
+### subset file
+subsetlist_clade3<-subsetlist[subsetlist$RB_level.1b=="3",]
+my_fasta_sub <- myfasta [names (myfasta) %in% subsetlist_clade3$Isolate.ID]
+
+### prepare new headers
+headers <- paste(subsetlist_clade3$Isolate.ID,subsetlist_clade3$Automated_SBI, subsetlist_clade3$Island, subsetlist_clade3$Sample.type, subsetlist_clade3$Date, sep="|")
+
+### Sort fasta file by headers
+write.fasta (sequences = my_fasta_sub, names = names (my_fasta_sub), file.out = "STEC2.fasta")
+input_fasta <- "STEC2.fasta"
+output_fasta <- "sorted_STEC2.fasta"
+sort_fasta_by_headers(input_fasta, output_fasta)
+
+
+### add dates to headers
+read_fasta("sorted_STEC2.fasta") %>%
+  mutate(name = headers) %>%
+  {
+    .x <- .
+    write_fasta(.x$sq, .x$name, "STEC_Clade3.fasta")
+  }
+
+# Then run IQTREE to get the treefile and make it a nwk file
+
+
+setwd("~/Objective1_BEAST/Holly_BEAST/Holly_BEAST/New_dates/IQTREE_new_29Apr26")
+
+library(ape)
+library(phytools)
+
+#tree <- read.tree("STEC_144.fasta.treefile")
+#mid_tree <- midpoint.root(tree)
+#write.tree(mid_tree, file="STEC_144.fasta.nwk")
+
+
+tree1 <- read.tree("STEC_Clade1.fasta.treefile")
+mid_tree1 <- midpoint.root(tree1)
+write.tree(mid_tree1, file="STEC_Clade1.fasta.nwk")
+
+
+tree2 <- read.tree("STEC_Clade2.fasta.treefile")
+mid_tree2 <- midpoint.root(tree2)
+write.tree(mid_tree2, file="STEC_Clade2.fasta.nwk")
+
+
+tree3 <- read.tree("STEC_Clade3.fasta.treefile")
+mid_tree3 <- midpoint.root(tree3)
+write.tree(mid_tree3, file="STEC_Clade3.fasta.nwk")
+
+
+#### Then get ML nwk tree files for each fasta file set and import into TempEst
+#### Parse dates - set format for dates as yyy-MM-dd
+
+
+
+
