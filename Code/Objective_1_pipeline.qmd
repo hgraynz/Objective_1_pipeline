@@ -133,18 +133,18 @@ my_fasta_sub <- myfasta [names (myfasta) %in% subsetlist_clade1$Isolate.ID]
 headers <- paste(subsetlist_clade1$Isolate.ID,subsetlist_clade1$Automated_SBI, subsetlist_clade1$Island, subsetlist_clade1$Sample.type,subsetlist_clade1$Date, sep="|")
 
 ### Sort fasta file by headers
-write.fasta (sequences = my_fasta_sub, names = names (my_fasta_sub), file.out = "STEC2.fasta")
-input_fasta <- "STEC2.fasta"
-output_fasta <- "sorted_STEC2.fasta"
+write.fasta (sequences = my_fasta_sub, names = names (my_fasta_sub), file.out = "Data/STEC1.fasta")
+input_fasta <- "Data/STEC1.fasta"
+output_fasta <- "Data/sorted_STEC1.fasta"
 sort_fasta_by_headers(input_fasta, output_fasta)
 
 
 ### add dates to headers
-read_fasta("sorted_STEC2.fasta") %>%
+read_fasta("Data/sorted_STEC1.fasta") %>%
   mutate(name = headers) %>%
   {
     .x <- .
-    write_fasta(.x$sq, .x$name, "STEC_Clade1.fasta")
+    write_fasta(.x$sq, .x$name, "Data/STEC_Clade1.fasta")
   }
 
 ### Clade 2
@@ -156,41 +156,42 @@ my_fasta_sub <- myfasta [names (myfasta) %in% subsetlist_clade2$Isolate.ID]
 headers <- paste(subsetlist_clade2$Isolate.ID,subsetlist_clade2$Automated_SBI, subsetlist_clade2$Island, subsetlist_clade2$Sample.type,subsetlist_clade2$Date, sep="|")
 
 ### Sort fasta file by headers
-write.fasta (sequences = my_fasta_sub, names = names (my_fasta_sub), file.out = "STEC2.fasta")
-input_fasta <- "STEC2.fasta"
-output_fasta <- "sorted_STEC2.fasta"
+write.fasta (sequences = my_fasta_sub, names = names (my_fasta_sub), file.out = "Data/STEC2.fasta")
+input_fasta <- "Data/STEC2.fasta"
+output_fasta <- "Data/sorted_STEC2.fasta"
 sort_fasta_by_headers(input_fasta, output_fasta)
 
 
 ### add dates to headers
-read_fasta("sorted_STEC2.fasta") %>%
+read_fasta("Data/sorted_STEC2.fasta") %>%
   mutate(name = headers) %>%
   {
     .x <- .
-    write_fasta(.x$sq, .x$name, "STEC_Clade2.fasta")
+    write_fasta(.x$sq, .x$name, "Data/STEC_Clade2.fasta")
   }
 
 ### Clade 3
 ### subset file
-subsetlist_clade3<-subsetlist[subsetlist$RB_level.1b=="3",]
-my_fasta_sub <- myfasta [names (myfasta) %in% subsetlist_clade3$Isolate.ID]
+
+subsetlist_clade1<-subsetlist[subsetlist$RB_level.1b=="3",]
+my_fasta_sub <- myfasta [names (myfasta) %in% subsetlist_clade1$Isolate.ID]
 
 ### prepare new headers
-headers <- paste(subsetlist_clade3$Isolate.ID,subsetlist_clade3$Automated_SBI, subsetlist_clade3$Island, subsetlist_clade3$Sample.type, subsetlist_clade3$Date, sep="|")
+headers <- paste(subsetlist_clade1$Isolate.ID,subsetlist_clade1$Automated_SBI, subsetlist_clade1$Island, subsetlist_clade1$Sample.type,subsetlist_clade1$Date, sep="|")
 
 ### Sort fasta file by headers
-write.fasta (sequences = my_fasta_sub, names = names (my_fasta_sub), file.out = "STEC2.fasta")
-input_fasta <- "STEC2.fasta"
-output_fasta <- "sorted_STEC2.fasta"
+write.fasta (sequences = my_fasta_sub, names = names (my_fasta_sub), file.out = "Data/STEC3.fasta")
+input_fasta <- "Data/STEC3.fasta"
+output_fasta <- "Data/sorted_STEC3.fasta"
 sort_fasta_by_headers(input_fasta, output_fasta)
 
 
 ### add dates to headers
-read_fasta("sorted_STEC2.fasta") %>%
+read_fasta("Data/sorted_STEC3.fasta") %>%
   mutate(name = headers) %>%
   {
     .x <- .
-    write_fasta(.x$sq, .x$name, "STEC_Clade3.fasta")
+    write_fasta(.x$sq, .x$name, "Data/STEC_Clade3.fasta")
   }
 
 ```
