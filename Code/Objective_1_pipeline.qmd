@@ -18,6 +18,15 @@ library(ape)
 library(tidyverse)
 library(tidysq)
 library(seqinr)
+library(BactDating)
+library(ape)
+library(ggtree)
+library(dplyr)  
+library(stringr)
+library(reshape2)
+library(tidyr)
+library(lubridate)
+library(coda)
 ```
 
 
@@ -248,4 +257,275 @@ mid_tree3 <- midpoint.root(tree3)
 write.tree(mid_tree3, file="Data/STEC_Clade3.fasta.nwk")
 ```
 
+
+```{r bactdating_clade1}
+# As previously seen with the analysis from TempEST the core SNP phylogeny
+
+############################## Clade 1 #####################################
+
+#This tree has 50 isolates included. 
+## read in tree
+tree=read.tree("Data/STEC_Clade1.fasta.nwk")
+#### make sure tip names and dates are in the same order ###
+names<-data.frame(tree$tip.label)
+header<-"name"
+colnames(names) <-header
+
+meta <- separate(data = names, 
+                 col = name, 
+                 into = c("name", "SBI", "island", "host", "date"), 
+                 sep = "\\|") ## needs // as | special char 
+
+dates=decimal_date(as.Date(meta$date))
+
+#make sure branch lengths are number of substitutions and not per site 
+## Check - should be total length of all branchesand much more than 1
+sum(tree$edge.length)
+#[1] 0.2588012 = not 1, need to do next step
+
+
+## if not do this, where multiplyer is length of snp profile
+### but make sure reload TREE before repeating this line!!! ###
+
+# SNP profile length is 3698 - I looked in geneious
+tree$edge.length=tree$edge.length*3698
+
+tree=initRoot(tree, dates, mtry = 10, useRec = F)
+
+## sense check
+allDates(tree)
+## parameter estimates
+roottotip(tree,dates, showFig=F)
+#$rate
+#date 
+#6144.995 
+
+#$ori
+#(Intercept) 
+#1975.074 
+
+#$pvalue
+#[1] 1e-04
+
+## complete plot
+roottotip(tree,dates, showFig=T)
+#$rate
+#date 
+#6144.995 
+
+#$ori
+#(Intercept) 
+#1975.074 
+
+#$pvalue
+#[1] 2e-04
+
+## just root to tip correlation
+r2<-roottotip(tree,dates,showFig=T,colored=T,showPredInt='gamma', showText=F,showTree=F)
+
+
+# Alternative model
+## fit bactdate model on time stamped tree
+res=bactdate(tree,dates, model="arc", nbIts = 5000000, showProgress = T)
+## check trace and convergence
+plot(res,'trace')
+mcmc=as.mcmc.resBactDating(res)
+effectiveSize(mcmc) ## should be >200 if coverged
+#      mu    sigma    alpha 
+# 201.1904 501.0000 226.8020 
+# Converged
+
+# Null model
+## fit bactdate model on fixed date tree (null model)
+Res2= bactdate(tree,rep(2010,length(dates)), model="arc", nbIts = 5000000, showProgress = T)
+## check trace and convergence
+plot(Res2,'trace')
+mcmc=as.mcmc.resBactDating(Res2)
+effectiveSize(mcmc)
+#         mu      sigma      alpha 
+# 3.987165 413.810878  10.863473 
+# Not converged
+
+modelcompare(res,Res2)
+#The first model has DIC=2169.81 and the second model has DIC=3675.40.
+# Model 1 is definitely better.
+
+```
+
+```{r bactdating_clade2}
+############################## Clade 2 #####################################
+
+# This tree has 46 isolates included. 
+## read in tree
+tree2=read.tree("Data/STEC_Clade2.fasta.nwk")
+#### make sure tip names and dates are in the same order ###
+names2<-data.frame(tree2$tip.label)
+header2<-"name"
+colnames(names2) <-header2
+
+meta2 <- separate(data = names2, 
+                  col = name, 
+                  into = c("name", "SBI", "island", "host", "date"), 
+                  sep = "\\|") ## needs // as | special char 
+
+dates2=decimal_date(as.Date(meta2$date))
+
+#make sure branch lengths are number of substitutions and not per site 
+## Check - should be total length of all branchesand much more than 1
+sum(tree2$edge.length)
+# [1] 0.2455159 again not 1 
+
+
+## if not do this, where multiplyer is length of snp profile
+### but make sure reload TREE before repeating this line!!! ###
+
+# SNP profile length is 3698 - I looked in geneious
+tree2$edge.length=tree2$edge.length*3698
+
+tree2=initRoot(tree2, dates2, mtry = 10, useRec = F)
+
+## sense check
+allDates(tree2)
+## parameter estimates
+roottotip(tree2,dates2, showFig=F)
+#$rate
+#date 
+#0.8687669 
+
+#$ori
+#(Intercept) 
+#1810.198 
+
+#$pvalue
+#[1] 0.2379
+
+## complete plot
+roottotip(tree2,dates2, showFig=T)
+#$rate
+#date 
+#0.8687669 
+
+#$ori
+#(Intercept) 
+#1810.198 
+
+#$pvalue
+#[1] 0.23
+
+## just root to tip correlation
+r22<-roottotip(tree2,dates2,showFig=T,colored=T,showPredInt='gamma', showText=F,showTree=F)
+
+
+# Alternative model
+## fit bactdate model on time stamped tree
+res22=bactdate(tree2,dates2, model="arc", nbIts = 5000000, showProgress = T)
+## check trace and convergence
+plot(res22,'trace')
+mcmc=as.mcmc.resBactDating(res22)
+effectiveSize(mcmc) ## should be >200 if coverged
+#    mu sigma alpha 
+# 501   501   501  = converged
+
+# Null model
+## fit bactdate model on fixed date tree (null model)
+Res22= bactdate(tree2,rep(2010,length(dates2)), model="arc", nbIts = 5000000, showProgress = T)
+## check trace and convergence
+plot(Res22,'trace')
+mcmc=as.mcmc.resBactDating(Res22)
+effectiveSize(mcmc)
+#        mu      sigma      alpha 
+# 3.356791 588.733071  20.059068 
+
+modelcompare(res22,Res22)
+#The first model has DIC=487.59 and the second model has DIC=6238.22.
+# Model 1 is definitely better.
+```
+
+```{r bactdating_clade3}
+############################## Clade 3 ##################################### 
+
+# This tree has 48 isolates included. 
+## read in tree
+tree3=read.tree("Data/STEC_Clade3.fasta.nwk")
+#### make sure tip names and dates are in the same order ###
+names3<-data.frame(tree3$tip.label)
+header3<-"name"
+colnames(names3) <-header3
+
+meta3 <- separate(data = names3, 
+                  col = name, 
+                  into = c("name", "SBI", "island", "host", "date"), 
+                  sep = "\\|") ## needs // as | special char 
+
+dates3=decimal_date(as.Date(meta3$date))
+
+#make sure branch lengths are number of substitutions and not per site 
+## Check - should be total length of all branchesand much more than 1
+sum(tree3$edge.length)
+# [1] 0.4515492 nope not 1
+
+## if not do this, where multiplyer is length of snp profile
+### but make sure reload TREE before repeating this line!!! ###
+
+# SNP profile length is 3698 - I looked in geneious
+tree3$edge.length=tree3$edge.length*3698
+
+tree3=initRoot(tree3, dates3, mtry = 10, useRec = F)
+
+## sense check
+allDates(tree3)
+## parameter estimates
+roottotip(tree3,dates3, showFig=F)
+#$rate
+#date 
+#1.255433 
+
+#$ori
+#(Intercept) 
+#1887.482 
+
+#$pvalue
+#[1] 0.0104
+
+## complete plot
+roottotip(tree3,dates3, showFig=T)
+#$rate
+#date 
+#1.255433 
+
+#$ori
+#(Intercept) 
+#1887.482 
+
+#$pvalue
+#[1] 0.0099
+## just root to tip correlation
+r23<-roottotip(tree3,dates3,showFig=T,colored=T,showPredInt='gamma', showText=F,showTree=F)
+
+# Alternative model
+## fit bactdate model on time stamped tree
+res23=bactdate(tree3,dates3, model="arc", nbIts = 100000000, showProgress = T) ### increase the chain length ### up to 10 mil or so
+## check trace and convergence
+plot(res23,'trace')
+mcmc=as.mcmc.resBactDating(res23)
+effectiveSize(mcmc) ## mu should be >200 if coverged
+# mu     sigma     alpha 
+# 231.46059 702.82088  55.76344 
+ 
+
+
+# Null model
+## fit bactdate model on fixed date tree (null model)
+Res23= bactdate(tree3,rep(2010,length(dates3)), model="arc", nbIts = 100000000, showProgress = T)
+## check trace and convergence
+plot(Res23,'trace')
+mcmc=as.mcmc.resBactDating(Res23)
+effectiveSize(mcmc)
+#         mu      sigma      alpha 
+# 3.270484 501.000000  16.716363 
+
+modelcompare(res23,Res23)
+# The first model has DIC=1243.65 and the second model has DIC=368638.94.
+# Model 1 is definitely better.
+```
 
