@@ -4,12 +4,13 @@ format: html
 editor: visual
 ---
 
-## Quarto
+## Objective_1_pipeline 
+
+This is following the analysis presented in: https://www.microbiologyresearch.org/content/journal/mgen/10.1099/mgen.0.001525#tab2
 
 ```{r setwd_libraries}
 setwd("~/Objective1_BEAST/Objective_1_pipeline")
 
-BiocManager::install("ggtree")
 library(rhierbaps)
 library(ggtree)
 library(phytools)
@@ -17,7 +18,6 @@ library(ape)
 library(tidyverse)
 library(tidysq)
 library(seqinr)
-
 ```
 
 
@@ -26,28 +26,30 @@ library(seqinr)
 ### rhierBAPS clades ###
 ########################
 
+### Run Rhierbaps code to determine clades
 set.seed(1653)
 
 snp.matrix <- load_fasta("Data/ERL06-3581_clean.core.fa")
 
 hb.results <- hierBAPS(snp.matrix, max.depth = 3, n.pops = 20, quiet = TRUE, n.extra.rounds = Inf, assignment.probs=TRUE)
 head(hb.results$partition.df)
-write.csv(hb.results$partition.df, "rhierbaps2.csv")
+write.csv(hb.results$partition.df, "Data/rhierbaps2.csv")
 
 
 hb.results$lml.list
 hb.results$cluster.assignment.prob
-write.csv(hb.results$cluster.assignment.prob, "rhierbaps2_cluster_assign_prob.csv")
+write.csv(hb.results$cluster.assignment.prob, "Data/rhierbaps2_cluster_assign_prob.csv")
 
-### Run Rhierbaps code to determine clades 
 ### Then add clade information to Genome_summaries_144.csv - note 3 and 4 collapsed to 3 as Clade 1b
 
-iqtree <- read.tree("ERL06-3581_clean.core.tree")
+iqtree <- read.tree("Data/ERL06-3581_clean.core.tree")
 
 gg <- ggtree(iqtree, layout = "circular", options(ignore.negative.edge=TRUE))
 gg <- gg %<+% hb.results$partition.df
-gg <- gg + geom_tippoint(aes(color = factor(`level 3`)))
+gg <- gg + geom_tippoint(aes(color = factor(`level 1`)))
 gg
+
+ggsave("Figures/Clades.svg", plot = gg, width = 7, height = 5)
 ```
 
 
@@ -56,7 +58,7 @@ gg
 ### adding info to fasta file headers ###
 #########################################
 
-myfasta <- seqinr::read.fasta (file = "Data?ERL06-3581_clean.core.fa", seqtype = "DNA", as.string = TRUE, set.attributes = FALSE)
+myfasta <- seqinr::read.fasta (file = "Data/ERL06-3581_clean.core.fa", seqtype = "DNA", as.string = TRUE, set.attributes = FALSE)
 
 ### Header csv needs to be in same order as fasta headers 
 
@@ -90,7 +92,7 @@ sort_fasta_by_headers <- function(input_fasta, output_fasta) {
 ### list of isolates to use - all must be present in fasta file and sorted by name
 ### Clade information from Rhierbaps should be added to csv file
 
-subsetlist <- read.csv ("Genome_summaries_144.csv", header=T) 
+subsetlist <- read.csv ("Data/Genome_summaries_144.csv", header=T) 
 subsetlist <- subsetlist[order(subsetlist$Isolate.ID),]
 
 ### prepare new headers
@@ -100,18 +102,18 @@ headers <- paste(subsetlist$Isolate.ID,subsetlist$Automated_SBI, subsetlist$Isla
 my_fasta_sub <- myfasta [names (myfasta) %in% subsetlist$Isolate.ID]
 
 ### Sort fasta file by headers
-write.fasta (sequences = my_fasta_sub, names = names (my_fasta_sub), file.out = "STEC2.fasta")
-input_fasta <- "STEC2.fasta"
-output_fasta <- "sorted_STEC2.fasta"
+write.fasta (sequences = my_fasta_sub, names = names (my_fasta_sub), file.out = "Data/STEC2.fasta")
+input_fasta <- "Data/STEC2.fasta"
+output_fasta <- "Data/sorted_STEC2.fasta"
 sort_fasta_by_headers(input_fasta, output_fasta)
 
 
 ### add dates to headers
-read_fasta("sorted_STEC2.fasta") %>%
+read_fasta("Data/sorted_STEC2.fasta") %>%
   mutate(name = headers) %>%
   {
     .x <- .
-    write_fasta(.x$sq, .x$name, "STEC_144.fasta")
+    write_fasta(.x$sq, .x$name, "Data/STEC_144.fasta")
   }
 
 ```
@@ -194,15 +196,34 @@ read_fasta("sorted_STEC2.fasta") %>%
 ```
 
 
-# Then run IQTREE to get the treefile and make it a nwk file
+### Then run IQTREE to get the treefile and make it a nwk file
+
+```{bash, eval=false}
+#!/bin/bash -e
+#SBATCH --account massey03727
+#SBATCH --job-name=iqtree # job name (shows up in the queue)
+#SBATCH --output=iqtree.log
+#SBATCH --time=02:00:00 # Walltime (HH:MM:SS)
+#SBATCH --cpus-per-task=16 # number of cpus/threads, in our case 4
+#SBATCH --mem=20GB            # Memory in MB
+
+module purge
+
+module load IQ-TREE/2.2.2.2-gimpi-2022a
+
+# iqtree -s STEC_144.fasta -m MF
+
+iqtree -s STEC_Clade1.fasta -m MF
+
+iqtree -s STEC_Clade2.fasta -m MF
+
+iqtree -s STEC_Clade3.fasta -m MF
+
+```
+
+
 
 ```{r midpoint_root_the_trees}
-
-setwd("~/Objective1_BEAST/Holly_BEAST/Holly_BEAST/New_dates/IQTREE_new_29Apr26")
-
-library(ape)
-library(phytools)
-
 #tree <- read.tree("STEC_144.fasta.treefile")
 #mid_tree <- midpoint.root(tree)
 #write.tree(mid_tree, file="STEC_144.fasta.nwk")
