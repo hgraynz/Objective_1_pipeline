@@ -1,0 +1,211 @@
+IQ-TREE multicore version 2.2.2.2 COVID-edition for Linux 64-bit built Feb 10 2023
+Developed by Bui Quang Minh, James Barbetti, Nguyen Lam Tung,
+Olga Chernomor, Heiko Schmidt, Dominik Schrempf, Michael Woodhams, Ly Trong Nhan.
+
+Host:    c027.hpc.nesi.org.nz (AVX512, FMA3, 376 GB RAM)
+Command: iqtree -s STEC_Clade1.fasta -m MF
+Seed:    22354 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Tue Jun 23 16:24:52 2026
+Kernel:  AVX+FMA - 1 threads (32 CPU cores detected)
+
+HINT: Use -nt option to specify number of threads because your CPU has 32 cores!
+HINT: -nt AUTO will automatically determine the best number of threads to use.
+
+Reading alignment file STEC_Clade1.fasta ... Fasta format detected
+Reading fasta file: done in 0.00298936 secs using 91.93% CPU
+Alignment most likely contains DNA/RNA sequences
+Constructing alignment: done in 0.0047092 secs using 90.23% CPU
+Alignment has 50 sequences with 3698 columns, 409 distinct patterns
+177 parsimony-informative, 770 singleton sites, 2751 constant sites
+                                         Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 3.92087e-05 secs using 96.92% CPU
+   1  109ST-1|AY2a|NI|bovine|1/09/2008           0.00%    passed     99.85%
+   2  13ER-3795|AY2a|NI|bovine|22/05/2013        0.00%    passed     99.83%
+   3  14ER-2816|AY2a|SI|bovine|12/09/2014        0.00%    passed     99.54%
+   4  14ER-98|AY2a|NI|bovine|19/12/2013          0.00%    passed     99.94%
+   5  E200a|AWY2a|NI|bovine|13/09/2010           0.00%    passed     98.61%
+   6  e82b|AY2a|NI|bovine|20/04/2010             0.00%    passed     98.58%
+   7  ER-06-287|AY2a|NI|human|20/01/2006         0.00%    passed     90.91%
+   8  ERL-04-3576|AY2a|SI|human|11/11/2004       0.00%    passed     99.44%
+   9  ERL-04-3852-S4|AY2a|NI|human|14/12/2004    0.00%    passed     99.69%
+  10  ERL-04-3852-S5|AY2a|SI|human|25/02/2005    0.00%    passed     99.74%
+  11  ERL-05-1169|AY2a|NI|human|6/04/2005        0.00%    passed     99.72%
+  12  ERL-06-3358|AY2a|SI|human|5/09/2006        0.00%    passed     99.94%
+  13  ERL-07-2865|AY2a|NI|human|31/08/2007       0.00%    passed     99.98%
+  14  ERL-07-811|AY2a|SI|human|3/02/2007         0.00%    passed     98.97%
+  15  ERL-08-2970|AY2a|SI|human|12/06/2008       0.00%    passed     99.62%
+  16  ERL-08-3450|AY2a|NI|human|28/08/2008       0.00%    passed     99.84%
+  17  ERL-12-1148|AY2a|SI|human|3/04/2012        0.00%    passed     99.95%
+  18  ERL04-2361|AY2a|NI|bovine|14/08/2004       0.00%    passed     99.01%
+  19  ERL04-2635|AWY2a|NI|bovine|30/08/2004      0.00%    passed     97.81%
+  20  ERL04-3180|AY2a|SI|bovine|8/10/2004        0.00%    passed     99.50%
+  21  ERL05-3130|AY2a|SI|bovine|6/09/2005        0.00%    passed     99.73%
+  22  ERL05-3260|AY2a|NI|bovine|10/08/2005       0.00%    passed     98.92%
+  23  ERL06-2494|AY2a|NI|bovine|25/07/2006       0.00%    passed     99.33%
+  24  ERL06-3112|AY2a|NI|bovine|21/08/2006       0.00%    passed     98.80%
+  25  ERL06-4361|A2a|NI|human|12/09/2006         0.00%    passed     99.85%
+  26  ERL07-1133|AY2a||bovine|14/02/2006         0.00%    passed     97.85%
+  27  ERL07-2285|AY2a||bovine|16/01/2007         0.00%    passed     97.85%
+  28  ERL07-2341|AY2a|NI|bovine|1/08/2007        0.00%    passed     99.39%
+  29  ERL08-1743|AY2a|NI|human|13/03/2007        0.00%    passed     99.95%
+  30  ERL08-1889|AY2a||bovine|8/05/2008          0.00%    passed     99.41%
+  31  ERL08-3922|AY2a|SI|bovine|19/09/2008       0.00%    passed     99.97%
+  32  ERL09-2594|AY2a|NI|human|17/08/2009        0.00%    passed     99.68%
+  33  ERL09-2641|AY2a|SI|bovine|25/08/2009       0.00%    passed     99.91%
+  34  ERL093611|AY2a|SI|human|14/10/2009         0.00%    passed     99.76%
+  35  ERL10-552|AY2a|NI|human|15/12/2010         0.00%    passed    100.00%
+  36  ERL10-835|AY2a|SI|bovine|9/02/2010         0.00%    passed     99.91%
+  37  ERL102582|AY2a|SI|human|23/07/2010         0.00%    passed     99.69%
+  38  ERL11-2886|AY2a|SI|bovine|30/08/2011       0.00%    passed     99.98%
+  39  ERL11105|AY2a|NI|human|22/03/2011          0.00%    passed     97.11%
+  40  ERL111514|AY2a|SI|human|11/01/2011         0.00%    passed     99.90%
+  41  ERL121344|AY2a|NI|human|12/04/2012         0.00%    passed     99.95%
+  42  H12ESR-3802|AY2a|SI|bovine|15/09/2012      0.00%    passed     99.73%
+  43  H12ESR-3850|AY2a|NI|bovine|14/10/2012      0.00%    passed     99.71%
+  44  H13ER-5955|AY2a|NI|human|6/06/2013         0.00%    passed     99.86%
+  45  H13ER-6657|AY2a|SI|human|21/05/2013        0.00%    passed    100.00%
+  46  H14ER-1346|AY2a|NI|human|14/04/2014        0.00%    passed     99.98%
+  47  H14ER-519|AY2a|SI|human|28/04/2014         0.00%    passed     99.98%
+  48  h160a|AY2a|NI|bovine|13/03/2014            0.00%    passed     98.87%
+  49  H81a|AY2a|NI|bovine|18/01/2010             0.00%    passed     98.10%
+  50  Reference|AY2a|SI|bovine|10/08/2009        0.00%    passed     99.83%
+****  TOTAL                                      0.00%  0 sequences failed composition chi2 test (p-value<5%; df=3)
+Checking for duplicate sequences: done in 0.000147093 secs using 99.26% CPU
+
+Creating fast initial parsimony tree by random order stepwise addition...
+0.008 seconds, parsimony score: 949 (based on 947 sites)
+Perform fast likelihood tree search using GTR+I+G model...
+Estimate model parameters (epsilon = 5.000)
+Perform nearest neighbor interchange...
+Optimizing NNI: done in 0.0287113 secs using 95.95% CPU
+Estimate model parameters (epsilon = 1.000)
+1. Initial log-likelihood: -11736.207
+2. Current log-likelihood: -11732.851
+3. Current log-likelihood: -11729.743
+4. Current log-likelihood: -11726.956
+5. Current log-likelihood: -11724.458
+6. Current log-likelihood: -11722.211
+7. Current log-likelihood: -11720.177
+8. Current log-likelihood: -11718.324
+9. Current log-likelihood: -11716.630
+10. Current log-likelihood: -11715.071
+11. Current log-likelihood: -11713.634
+12. Current log-likelihood: -11712.307
+13. Current log-likelihood: -11711.076
+14. Current log-likelihood: -11709.931
+15. Current log-likelihood: -11708.863
+16. Current log-likelihood: -11707.862
+Optimal log-likelihood: -11706.901
+Rate parameters:  A-C: 1.29703  A-G: 3.64724  A-T: 1.51423  C-G: 0.09029  C-T: 3.88617  G-T: 1.00000
+Base frequencies:  A: 0.156  C: 0.307  G: 0.392  T: 0.145
+Proportion of invariable sites: 0.165
+Gamma shape alpha: 998.446
+Parameters optimization took 16 rounds (0.275 sec)
+Time for fast ML tree search: 0.491 seconds
+
+NOTE: ModelFinder requires 6 MB RAM!
+ModelFinder will test up to 484 DNA models (sample size: 3698) ...
+ No. Model         -LnL         df  AIC          AICc         BIC
+  1  GTR+F         11686.400    105 23582.800    23588.997    24235.433
+  2  GTR+F+I       11686.405    106 23584.810    23591.127    24243.658
+  3  GTR+F+G4      11686.458    106 23584.916    23591.233    24243.764
+  4  GTR+F+I+G4    11689.711    107 23593.421    23599.859    24258.485
+  5  GTR+F+R2      11686.456    107 23586.911    23593.349    24251.975
+  6  GTR+F+R3      11686.425    109 23590.849    23597.533    24268.344
+ 14  GTR+F+I+R2    11688.109    108 23592.219    23598.779    24263.498
+ 15  GTR+F+I+R3    11687.523    110 23595.046    23601.854    24278.757
+ 23  SYM           11889.357    102 23982.713    23988.558    24616.699
+ 24  SYM+I         11889.357    103 23984.713    23990.674    24624.914
+ 25  SYM+G4        11889.455    103 23984.909    23990.870    24625.111
+ 45  TVM+F         11686.777    104 23581.555    23587.633    24227.972
+ 46  TVM+F+I       11686.764    105 23583.528    23589.725    24236.160
+ 47  TVM+F+G4      11686.832    105 23583.665    23589.862    24236.297
+ 67  TVMe          11889.643    101 23981.285    23987.015    24609.056
+ 68  TVMe+I        11889.645    102 23983.291    23989.135    24617.276
+ 69  TVMe+G4       11889.738    102 23983.477    23989.322    24617.463
+ 89  TIM3+F        11772.679    103 23751.357    23757.318    24391.559
+ 90  TIM3+F+I      11772.678    104 23753.357    23759.435    24399.774
+ 91  TIM3+F+G4     11772.758    104 23753.517    23759.595    24399.933
+111  TIM3e         11941.440    100 24082.880    24088.496    24704.435
+112  TIM3e+I       11941.441    101 24084.883    24090.613    24712.653
+113  TIM3e+G4      11941.543    101 24085.087    24090.817    24712.857
+133  TIM2+F        11752.508    103 23711.015    23716.976    24351.217
+134  TIM2+F+I      11752.508    104 23713.016    23719.094    24359.433
+135  TIM2+F+G4     11752.583    104 23713.166    23719.244    24359.583
+155  TIM2e         11929.540    100 24059.079    24064.695    24680.634
+156  TIM2e+I       11929.540    101 24061.081    24066.811    24688.851
+157  TIM2e+G4      11929.639    101 24061.277    24067.007    24689.048
+177  TIM+F         11750.878    103 23707.755    23713.716    24347.957
+178  TIM+F+I       11750.878    104 23709.755    23715.834    24356.172
+179  TIM+F+G4      11750.957    104 23709.915    23715.993    24356.332
+199  TIMe          11921.642    100 24043.284    24048.900    24664.839
+200  TIMe+I        11921.643    101 24045.285    24051.015    24673.055
+201  TIMe+G4       11921.743    101 24045.485    24051.215    24673.256
+221  TPM3u+F       11773.054    102 23750.107    23755.952    24384.093
+222  TPM3u+F+I     11773.054    103 23752.108    23758.069    24392.309
+223  TPM3u+F+G4    11773.134    103 23752.267    23758.228    24392.469
+243  TPM3          11941.720    99  24081.440    24086.943    24696.779
+244  TPM3+I        11941.720    100 24083.440    24089.056    24704.995
+245  TPM3+G4       11941.820    100 24083.639    24089.255    24705.194
+265  TPM2u+F       11752.882    102 23709.765    23715.609    24343.750
+266  TPM2u+F+I     11752.882    103 23711.764    23717.725    24351.966
+267  TPM2u+F+G4    11752.957    103 23711.915    23717.876    24352.116
+287  TPM2          11929.829    99  24057.658    24063.161    24672.998
+288  TPM2+I        11929.825    100 24059.651    24065.267    24681.206
+289  TPM2+G4       11929.923    100 24059.847    24065.463    24681.402
+309  K3Pu+F        11751.253    102 23706.506    23712.351    24340.492
+310  K3Pu+F+I      11751.253    103 23708.506    23714.467    24348.708
+311  K3Pu+F+G4     11751.334    103 23708.669    23714.630    24348.870
+331  K3P           11921.924    99  24041.847    24047.351    24657.187
+332  K3P+I         11921.924    100 24043.848    24049.464    24665.403
+333  K3P+G4        11922.024    100 24044.048    24049.664    24665.603
+353  TN+F          11804.704    102 23813.408    23819.253    24447.394
+354  TN+F+I        11804.704    103 23815.408    23821.369    24455.610
+355  TN+F+G4       11804.790    103 23815.579    23821.541    24455.781
+375  TNe           11951.598    99  24101.195    24106.698    24716.534
+376  TNe+I         11951.598    100 24103.195    24108.811    24724.750
+377  TNe+G4        11951.698    100 24103.396    24109.011    24724.950
+397  HKY+F         11805.079    101 23812.159    23817.888    24439.929
+398  HKY+F+I       11805.079    102 23814.159    23820.004    24448.145
+399  HKY+F+G4      11805.165    102 23814.330    23820.174    24448.315
+419  K2P           11951.879    98  24099.759    24105.150    24708.883
+420  K2P+I         11951.880    99  24101.759    24107.262    24717.098
+421  K2P+G4        11951.980    99  24101.959    24107.462    24717.298
+441  F81+F         12139.909    100 24479.818    24485.434    25101.373
+442  F81+F+I       12139.909    101 24481.819    24487.548    25109.589
+443  F81+F+G4      12140.006    101 24482.011    24487.741    25109.781
+463  JC            12226.871    97  24647.742    24653.023    25250.650
+464  JC+I          12226.871    98  24649.742    24655.133    25258.866
+465  JC+G4         12226.972    98  24649.943    24655.335    25259.067
+Akaike Information Criterion:           TVM+F
+Corrected Akaike Information Criterion: TVM+F
+Bayesian Information Criterion:         TVM+F
+Best-fit model: TVM+F chosen according to BIC
+
+All model information printed to STEC_Clade1.fasta.model.gz
+CPU time for ModelFinder: 6.299 seconds (0h:0m:6s)
+Wall-clock time for ModelFinder: 6.432 seconds (0h:0m:6s)
+
+NOTE: 0 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -11686.777
+Optimal log-likelihood: -11686.777
+Rate parameters:  A-C: 1.29922  A-G: 3.75003  A-T: 1.46880  C-G: 0.09452  C-T: 3.75003  G-T: 1.00000
+Base frequencies:  A: 0.156  C: 0.307  G: 0.392  T: 0.145
+Parameters optimization took 1 rounds (0.005 sec)
+Wrote distance file to... 
+BEST SCORE FOUND : -11686.777
+Total tree length: 0.259
+
+Total number of iterations: 0
+CPU time used for tree search: 0.000 sec (0h:0m:0s)
+Wall-clock time used for tree search: 0.000 sec (0h:0m:0s)
+Total CPU time used: 0.011 sec (0h:0m:0s)
+Total wall-clock time used: 0.015 sec (0h:0m:0s)
+
+Analysis results written to: 
+  IQ-TREE report:                STEC_Clade1.fasta.iqtree
+  Tree used for ModelFinder:     STEC_Clade1.fasta.treefile
+  Screen log file:               STEC_Clade1.fasta.log
+
+Date and Time: Tue Jun 23 16:24:58 2026
