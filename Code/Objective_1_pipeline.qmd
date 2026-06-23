@@ -225,29 +225,27 @@ iqtree -s STEC_Clade3.fasta -m MF
 
 
 ```{r midpoint_root_the_trees}
+#### Then get ML nwk tree files for each fasta file set and import into TempEst
+#### Parse dates - set format for dates as yyy-MM-dd
+
 #tree <- read.tree("STEC_144.fasta.treefile")
 #mid_tree <- midpoint.root(tree)
 #write.tree(mid_tree, file="STEC_144.fasta.nwk")
 
 
-tree1 <- read.tree("STEC_Clade1.fasta.treefile")
+tree1 <- read.tree("Data/STEC_Clade1.fasta.treefile")
 mid_tree1 <- midpoint.root(tree1)
-write.tree(mid_tree1, file="STEC_Clade1.fasta.nwk")
+write.tree(mid_tree1, file="Data/STEC_Clade1.fasta.nwk")
 
 
-tree2 <- read.tree("STEC_Clade2.fasta.treefile")
+tree2 <- read.tree("Data/STEC_Clade2.fasta.treefile")
 mid_tree2 <- midpoint.root(tree2)
-write.tree(mid_tree2, file="STEC_Clade2.fasta.nwk")
+write.tree(mid_tree2, file="Data/STEC_Clade2.fasta.nwk")
 
 
-tree3 <- read.tree("STEC_Clade3.fasta.treefile")
+tree3 <- read.tree("Data/STEC_Clade3.fasta.treefile")
 mid_tree3 <- midpoint.root(tree3)
-write.tree(mid_tree3, file="STEC_Clade3.fasta.nwk")
-
-
-#### Then get ML nwk tree files for each fasta file set and import into TempEst
-#### Parse dates - set format for dates as yyy-MM-dd
-
+write.tree(mid_tree3, file="Data/STEC_Clade3.fasta.nwk")
 ```
 
 
