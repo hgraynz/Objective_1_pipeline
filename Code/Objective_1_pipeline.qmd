@@ -402,29 +402,9 @@ tree2=initRoot(tree2, dates2, mtry = 10, useRec = F)
 allDates(tree2)
 ## parameter estimates
 roottotip(tree2,dates2, showFig=F)
-#$rate
-#date 
-#0.8687669 
-
-#$ori
-#(Intercept) 
-#1810.198 
-
-#$pvalue
-#[1] 0.2379
 
 ## complete plot
 roottotip(tree2,dates2, showFig=T)
-#$rate
-#date 
-#0.8687669 
-
-#$ori
-#(Intercept) 
-#1810.198 
-
-#$pvalue
-#[1] 0.23
 
 ## just root to tip correlation
 r22<-roottotip(tree2,dates2,showFig=T,colored=T,showPredInt='gamma', showText=F,showTree=F)
@@ -454,6 +434,55 @@ modelcompare(res22,Res22)
 #The first model has DIC=487.59 and the second model has DIC=6238.22.
 # Model 1 is definitely better.
 ```
+
+> ## parameter estimates
+> roottotip(tree2,dates2, showFig=F)
+$rate
+    date 
+1.515432 
+
+$ori
+(Intercept) 
+   -11.7541 
+
+$pvalue
+[1] 0.0327
+
+> ## complete plot
+> roottotip(tree2,dates2, showFig=T)
+$rate
+    date 
+1.515432 
+
+$ori
+(Intercept) 
+   -11.7541 
+
+$pvalue
+[1] 0.0329
+
+> # Alternative model
+> ## fit bactdate model on time stamped tree
+> res22=bactdate(tree2,dates2, model="arc", nbIts = 5000000, showProgress = T)
+  |=====================================================================================================================| 100%
+> ## check trace and convergence
+> plot(res22,'trace')
+> mcmc=as.mcmc.resBactDating(res22)
+> effectiveSize(mcmc) ## should be >200 if coverged
+       mu     sigma     alpha 
+ 11.44074 501.00000  14.71377 
+> ## check trace and convergence
+> plot(res22,'trace')
+> # Null model
+> ## fit bactdate model on fixed date tree (null model)
+> Res22= bactdate(tree2,rep(2010,length(dates2)), model="arc", nbIts = 5000000, showProgress = T)
+  |=====================================================================================================================| 100%
+> ## check trace and convergence
+> plot(Res22,'trace')
+> mcmc=as.mcmc.resBactDating(Res22)
+> effectiveSize(mcmc)
+        mu      sigma      alpha 
+  9.485197 501.000000   7.413765 
 
 ```{r bactdating_clade3}
 ############################## Clade 3 ##################################### 
