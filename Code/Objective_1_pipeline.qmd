@@ -281,7 +281,7 @@ dates=decimal_date(as.Date(meta$date))
 #make sure branch lengths are number of substitutions and not per site 
 ## Check - should be total length of all branchesand much more than 1
 sum(tree$edge.length)
-#[1] 0.2588012 = not 1, need to do next step
+#[1] 0.2588016 = not 1, need to do next step
 
 
 ## if not do this, where multiplyer is length of snp profile
@@ -296,29 +296,9 @@ tree=initRoot(tree, dates, mtry = 10, useRec = F)
 allDates(tree)
 ## parameter estimates
 roottotip(tree,dates, showFig=F)
-#$rate
-#date 
-#6144.995 
-
-#$ori
-#(Intercept) 
-#1975.074 
-
-#$pvalue
-#[1] 1e-04
 
 ## complete plot
 roottotip(tree,dates, showFig=T)
-#$rate
-#date 
-#6144.995 
-
-#$ori
-#(Intercept) 
-#1975.074 
-
-#$pvalue
-#[1] 2e-04
 
 ## just root to tip correlation
 r2<-roottotip(tree,dates,showFig=T,colored=T,showPredInt='gamma', showText=F,showTree=F)
@@ -326,7 +306,7 @@ r2<-roottotip(tree,dates,showFig=T,colored=T,showPredInt='gamma', showText=F,sho
 
 # Alternative model
 ## fit bactdate model on time stamped tree
-res=bactdate(tree,dates, model="arc", nbIts = 5000000, showProgress = T)
+res=bactdate(tree,dates, model="arc", nbIts = 90000000, showProgress = T)
 ## check trace and convergence
 plot(res,'trace')
 mcmc=as.mcmc.resBactDating(res)
@@ -351,6 +331,40 @@ modelcompare(res,Res2)
 # Model 1 is definitely better.
 
 ```
+> roottotip(tree,dates, showFig=F)
+$rate
+     date 
+0.6643144 
+
+$ori
+(Intercept) 
+  -83.35468 
+
+$pvalue
+[1] 0.0041
+
+> roottotip(tree,dates, showFig=T)
+$rate
+     date 
+0.6643144 
+
+$ori
+(Intercept) 
+  -83.35468 
+
+$pvalue
+[1] 0.0043
+
+
+> # Alternative model
+> ## fit bactdate model on time stamped tree
+> res=bactdate(tree,dates, model="arc", nbIts = 90000000, showProgress = T)
+  |==============================================================================| 100%
+  
+> mcmc=as.mcmc.resBactDating(res)
+> effectiveSize(mcmc) ## should be >200 if coverged
+      mu    sigma    alpha 
+166.0129 501.0000 146.1781 
 
 ```{r bactdating_clade2}
 ############################## Clade 2 #####################################
