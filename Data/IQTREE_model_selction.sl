@@ -12,8 +12,8 @@ module load IQ-TREE/2.2.2.2-gimpi-2022a
 
 # iqtree -s STEC_144.fasta -m MF
 
-iqtree -s STEC_Clade1.fasta -m MF
+iqtree --redo -s STEC_Clade1.fasta -m MF
 
-iqtree -s STEC_Clade2.fasta -m MF
+iqtree --redo -s STEC_Clade2.fasta -m MF
 
-iqtree -s STEC_Clade3.fasta -m MF
+iqtree --redo -s STEC_Clade3.fasta -m MF

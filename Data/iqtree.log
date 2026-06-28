@@ -6,333 +6,332 @@ IQ-TREE multicore version 2.2.2.2 COVID-edition for Linux 64-bit built Feb 10 20
 Developed by Bui Quang Minh, James Barbetti, Nguyen Lam Tung,
 Olga Chernomor, Heiko Schmidt, Dominik Schrempf, Michael Woodhams, Ly Trong Nhan.
 
-Host:    c027.hpc.nesi.org.nz (AVX512, FMA3, 376 GB RAM)
-Command: iqtree -s STEC_Clade1.fasta -m MF
-Seed:    22354 (Using SPRNG - Scalable Parallel Random Number Generator)
-Time:    Tue Jun 23 16:24:52 2026
+Host:    c001.hpc.nesi.org.nz (AVX512, FMA3, 376 GB RAM)
+Command: iqtree --redo -s STEC_Clade1.fasta -m MF
+Seed:    417436 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Sun Jun 28 18:24:34 2026
 Kernel:  AVX+FMA - 1 threads (32 CPU cores detected)
 
 HINT: Use -nt option to specify number of threads because your CPU has 32 cores!
 HINT: -nt AUTO will automatically determine the best number of threads to use.
 
 Reading alignment file STEC_Clade1.fasta ... Fasta format detected
-Reading fasta file: done in 0.00298936 secs using 91.93% CPU
+Reading fasta file: done in 0.00291865 secs using 87.61% CPU
 Alignment most likely contains DNA/RNA sequences
-Constructing alignment: done in 0.0047092 secs using 90.23% CPU
+Constructing alignment: done in 0.00417528 secs using 69.36% CPU
 Alignment has 50 sequences with 3698 columns, 409 distinct patterns
 177 parsimony-informative, 770 singleton sites, 2751 constant sites
                                          Gap/Ambiguity  Composition  p-value
-Analyzing sequences: done in 3.92087e-05 secs using 96.92% CPU
-   1  109ST-1|AY2a|NI|bovine|1/09/2008           0.00%    passed     99.85%
-   2  13ER-3795|AY2a|NI|bovine|22/05/2013        0.00%    passed     99.83%
-   3  14ER-2816|AY2a|SI|bovine|12/09/2014        0.00%    passed     99.54%
-   4  14ER-98|AY2a|NI|bovine|19/12/2013          0.00%    passed     99.94%
-   5  E200a|AWY2a|NI|bovine|13/09/2010           0.00%    passed     98.61%
-   6  e82b|AY2a|NI|bovine|20/04/2010             0.00%    passed     98.58%
-   7  ER-06-287|AY2a|NI|human|20/01/2006         0.00%    passed     90.91%
-   8  ERL-04-3576|AY2a|SI|human|11/11/2004       0.00%    passed     99.44%
-   9  ERL-04-3852-S4|AY2a|NI|human|14/12/2004    0.00%    passed     99.69%
-  10  ERL-04-3852-S5|AY2a|SI|human|25/02/2005    0.00%    passed     99.74%
-  11  ERL-05-1169|AY2a|NI|human|6/04/2005        0.00%    passed     99.72%
-  12  ERL-06-3358|AY2a|SI|human|5/09/2006        0.00%    passed     99.94%
-  13  ERL-07-2865|AY2a|NI|human|31/08/2007       0.00%    passed     99.98%
-  14  ERL-07-811|AY2a|SI|human|3/02/2007         0.00%    passed     98.97%
-  15  ERL-08-2970|AY2a|SI|human|12/06/2008       0.00%    passed     99.62%
-  16  ERL-08-3450|AY2a|NI|human|28/08/2008       0.00%    passed     99.84%
-  17  ERL-12-1148|AY2a|SI|human|3/04/2012        0.00%    passed     99.95%
-  18  ERL04-2361|AY2a|NI|bovine|14/08/2004       0.00%    passed     99.01%
-  19  ERL04-2635|AWY2a|NI|bovine|30/08/2004      0.00%    passed     97.81%
-  20  ERL04-3180|AY2a|SI|bovine|8/10/2004        0.00%    passed     99.50%
-  21  ERL05-3130|AY2a|SI|bovine|6/09/2005        0.00%    passed     99.73%
-  22  ERL05-3260|AY2a|NI|bovine|10/08/2005       0.00%    passed     98.92%
-  23  ERL06-2494|AY2a|NI|bovine|25/07/2006       0.00%    passed     99.33%
-  24  ERL06-3112|AY2a|NI|bovine|21/08/2006       0.00%    passed     98.80%
-  25  ERL06-4361|A2a|NI|human|12/09/2006         0.00%    passed     99.85%
-  26  ERL07-1133|AY2a||bovine|14/02/2006         0.00%    passed     97.85%
-  27  ERL07-2285|AY2a||bovine|16/01/2007         0.00%    passed     97.85%
-  28  ERL07-2341|AY2a|NI|bovine|1/08/2007        0.00%    passed     99.39%
-  29  ERL08-1743|AY2a|NI|human|13/03/2007        0.00%    passed     99.95%
-  30  ERL08-1889|AY2a||bovine|8/05/2008          0.00%    passed     99.41%
-  31  ERL08-3922|AY2a|SI|bovine|19/09/2008       0.00%    passed     99.97%
-  32  ERL09-2594|AY2a|NI|human|17/08/2009        0.00%    passed     99.68%
-  33  ERL09-2641|AY2a|SI|bovine|25/08/2009       0.00%    passed     99.91%
-  34  ERL093611|AY2a|SI|human|14/10/2009         0.00%    passed     99.76%
-  35  ERL10-552|AY2a|NI|human|15/12/2010         0.00%    passed    100.00%
-  36  ERL10-835|AY2a|SI|bovine|9/02/2010         0.00%    passed     99.91%
-  37  ERL102582|AY2a|SI|human|23/07/2010         0.00%    passed     99.69%
-  38  ERL11-2886|AY2a|SI|bovine|30/08/2011       0.00%    passed     99.98%
-  39  ERL11105|AY2a|NI|human|22/03/2011          0.00%    passed     97.11%
-  40  ERL111514|AY2a|SI|human|11/01/2011         0.00%    passed     99.90%
-  41  ERL121344|AY2a|NI|human|12/04/2012         0.00%    passed     99.95%
-  42  H12ESR-3802|AY2a|SI|bovine|15/09/2012      0.00%    passed     99.73%
-  43  H12ESR-3850|AY2a|NI|bovine|14/10/2012      0.00%    passed     99.71%
-  44  H13ER-5955|AY2a|NI|human|6/06/2013         0.00%    passed     99.86%
-  45  H13ER-6657|AY2a|SI|human|21/05/2013        0.00%    passed    100.00%
-  46  H14ER-1346|AY2a|NI|human|14/04/2014        0.00%    passed     99.98%
-  47  H14ER-519|AY2a|SI|human|28/04/2014         0.00%    passed     99.98%
-  48  h160a|AY2a|NI|bovine|13/03/2014            0.00%    passed     98.87%
-  49  H81a|AY2a|NI|bovine|18/01/2010             0.00%    passed     98.10%
-  50  Reference|AY2a|SI|bovine|10/08/2009        0.00%    passed     99.83%
+Analyzing sequences: done in 3.56361e-05 secs using 95.41% CPU
+   1  109ST-1|AY2a|NI|bovine|1-09-2008           0.00%    passed     99.85%
+   2  13ER-3795|AY2a|NI|bovine|22-05-2013        0.00%    passed     99.83%
+   3  14ER-2816|AY2a|SI|bovine|12-09-2014        0.00%    passed     99.54%
+   4  14ER-98|AY2a|NI|bovine|19-12-2013          0.00%    passed     99.94%
+   5  E200a|AWY2a|NI|bovine|13-09-2010           0.00%    passed     98.61%
+   6  e82b|AY2a|NI|bovine|20-04-2010             0.00%    passed     98.58%
+   7  ER-06-287|AY2a|NI|human|20-01-2006         0.00%    passed     90.91%
+   8  ERL-04-3576|AY2a|SI|human|11-11-2004       0.00%    passed     99.44%
+   9  ERL-04-3852-S4|AY2a|NI|human|14-12-2004    0.00%    passed     99.69%
+  10  ERL-04-3852-S5|AY2a|SI|human|25-02-2005    0.00%    passed     99.74%
+  11  ERL-05-1169|AY2a|NI|human|6-04-2005        0.00%    passed     99.72%
+  12  ERL-06-3358|AY2a|SI|human|5-09-2006        0.00%    passed     99.94%
+  13  ERL-07-2865|AY2a|NI|human|31-08-2007       0.00%    passed     99.98%
+  14  ERL-07-811|AY2a|SI|human|3-02-2007         0.00%    passed     98.97%
+  15  ERL-08-2970|AY2a|SI|human|12-06-2008       0.00%    passed     99.62%
+  16  ERL-08-3450|AY2a|NI|human|28-08-2008       0.00%    passed     99.84%
+  17  ERL-12-1148|AY2a|SI|human|3-04-2012        0.00%    passed     99.95%
+  18  ERL04-2361|AY2a|NI|bovine|14-08-2004       0.00%    passed     99.01%
+  19  ERL04-2635|AWY2a|NI|bovine|30-08-2004      0.00%    passed     97.81%
+  20  ERL04-3180|AY2a|SI|bovine|8-10-2004        0.00%    passed     99.50%
+  21  ERL05-3130|AY2a|SI|bovine|6-09-2005        0.00%    passed     99.73%
+  22  ERL05-3260|AY2a|NI|bovine|10-08-2005       0.00%    passed     98.92%
+  23  ERL06-2494|AY2a|NI|bovine|25-07-2006       0.00%    passed     99.33%
+  24  ERL06-3112|AY2a|NI|bovine|21-08-2006       0.00%    passed     98.80%
+  25  ERL06-4361|A2a|NI|human|12-09-2006         0.00%    passed     99.85%
+  26  ERL07-1133|AY2a||bovine|14-02-2006         0.00%    passed     97.85%
+  27  ERL07-2285|AY2a||bovine|16-01-2007         0.00%    passed     97.85%
+  28  ERL07-2341|AY2a|NI|bovine|1-08-2007        0.00%    passed     99.39%
+  29  ERL08-1743|AY2a|NI|human|13-03-2007        0.00%    passed     99.95%
+  30  ERL08-1889|AY2a||bovine|8-05-2008          0.00%    passed     99.41%
+  31  ERL08-3922|AY2a|SI|bovine|19-09-2008       0.00%    passed     99.97%
+  32  ERL09-2594|AY2a|NI|human|17-08-2009        0.00%    passed     99.68%
+  33  ERL09-2641|AY2a|SI|bovine|25-08-2009       0.00%    passed     99.91%
+  34  ERL093611|AY2a|SI|human|14-10-2009         0.00%    passed     99.76%
+  35  ERL10-552|AY2a|NI|human|15-12-2010         0.00%    passed    100.00%
+  36  ERL10-835|AY2a|SI|bovine|9-02-2010         0.00%    passed     99.91%
+  37  ERL102582|AY2a|SI|human|23-07-2010         0.00%    passed     99.69%
+  38  ERL11-2886|AY2a|SI|bovine|30-08-2011       0.00%    passed     99.98%
+  39  ERL11105|AY2a|NI|human|22-03-2011          0.00%    passed     97.11%
+  40  ERL111514|AY2a|SI|human|11-01-2011         0.00%    passed     99.90%
+  41  ERL121344|AY2a|NI|human|12-04-2012         0.00%    passed     99.95%
+  42  H12ESR-3802|AY2a|SI|bovine|15-09-2012      0.00%    passed     99.73%
+  43  H12ESR-3850|AY2a|NI|bovine|14-10-2012      0.00%    passed     99.71%
+  44  H13ER-5955|AY2a|NI|human|6-06-2013         0.00%    passed     99.86%
+  45  H13ER-6657|AY2a|SI|human|21-05-2013        0.00%    passed    100.00%
+  46  H14ER-1346|AY2a|NI|human|14-04-2014        0.00%    passed     99.98%
+  47  H14ER-519|AY2a|SI|human|28-04-2014         0.00%    passed     99.98%
+  48  h160a|AY2a|NI|bovine|13-03-2014            0.00%    passed     98.87%
+  49  H81a|AY2a|NI|bovine|18-01-2010             0.00%    passed     98.10%
+  50  Reference|AY2a|SI|bovine|10-08-2009        0.00%    passed     99.83%
 ****  TOTAL                                      0.00%  0 sequences failed composition chi2 test (p-value<5%; df=3)
-Checking for duplicate sequences: done in 0.000147093 secs using 99.26% CPU
+Checking for duplicate sequences: done in 0.000146251 secs using 43.08% CPU
 
-Creating fast initial parsimony tree by random order stepwise addition...
-0.008 seconds, parsimony score: 949 (based on 947 sites)
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.002 seconds
 Perform fast likelihood tree search using GTR+I+G model...
 Estimate model parameters (epsilon = 5.000)
 Perform nearest neighbor interchange...
-Optimizing NNI: done in 0.0287113 secs using 95.95% CPU
+Optimizing NNI: done in 0.0247693 secs using 91.25% CPU
 Estimate model parameters (epsilon = 1.000)
 1. Initial log-likelihood: -11736.207
 2. Current log-likelihood: -11732.851
-3. Current log-likelihood: -11729.743
-4. Current log-likelihood: -11726.956
-5. Current log-likelihood: -11724.458
-6. Current log-likelihood: -11722.211
-7. Current log-likelihood: -11720.177
-8. Current log-likelihood: -11718.324
-9. Current log-likelihood: -11716.630
-10. Current log-likelihood: -11715.071
-11. Current log-likelihood: -11713.634
-12. Current log-likelihood: -11712.307
-13. Current log-likelihood: -11711.076
-14. Current log-likelihood: -11709.931
-15. Current log-likelihood: -11708.863
-16. Current log-likelihood: -11707.862
-Optimal log-likelihood: -11706.901
-Rate parameters:  A-C: 1.29703  A-G: 3.64724  A-T: 1.51423  C-G: 0.09029  C-T: 3.88617  G-T: 1.00000
+3. Current log-likelihood: -11729.742
+4. Current log-likelihood: -11726.962
+5. Current log-likelihood: -11724.474
+6. Current log-likelihood: -11722.232
+7. Current log-likelihood: -11720.186
+8. Current log-likelihood: -11718.330
+9. Current log-likelihood: -11716.634
+10. Current log-likelihood: -11715.077
+11. Current log-likelihood: -11713.642
+12. Current log-likelihood: -11712.316
+13. Current log-likelihood: -11711.078
+14. Current log-likelihood: -11709.930
+15. Current log-likelihood: -11708.861
+Optimal log-likelihood: -11707.834
+Rate parameters:  A-C: 1.28810  A-G: 3.61999  A-T: 1.51040  C-G: 0.08975  C-T: 3.86070  G-T: 1.00000
 Base frequencies:  A: 0.156  C: 0.307  G: 0.392  T: 0.145
-Proportion of invariable sites: 0.165
+Proportion of invariable sites: 0.171
 Gamma shape alpha: 998.446
-Parameters optimization took 16 rounds (0.275 sec)
-Time for fast ML tree search: 0.491 seconds
+Parameters optimization took 15 rounds (0.243 sec)
+Time for fast ML tree search: 0.434 seconds
 
 NOTE: ModelFinder requires 6 MB RAM!
 ModelFinder will test up to 484 DNA models (sample size: 3698) ...
  No. Model         -LnL         df  AIC          AICc         BIC
-  1  GTR+F         11686.400    105 23582.800    23588.997    24235.433
-  2  GTR+F+I       11686.405    106 23584.810    23591.127    24243.658
-  3  GTR+F+G4      11686.458    106 23584.916    23591.233    24243.764
-  4  GTR+F+I+G4    11689.711    107 23593.421    23599.859    24258.485
-  5  GTR+F+R2      11686.456    107 23586.911    23593.349    24251.975
-  6  GTR+F+R3      11686.425    109 23590.849    23597.533    24268.344
- 14  GTR+F+I+R2    11688.109    108 23592.219    23598.779    24263.498
- 15  GTR+F+I+R3    11687.523    110 23595.046    23601.854    24278.757
- 23  SYM           11889.357    102 23982.713    23988.558    24616.699
- 24  SYM+I         11889.357    103 23984.713    23990.674    24624.914
- 25  SYM+G4        11889.455    103 23984.909    23990.870    24625.111
- 45  TVM+F         11686.777    104 23581.555    23587.633    24227.972
- 46  TVM+F+I       11686.764    105 23583.528    23589.725    24236.160
- 47  TVM+F+G4      11686.832    105 23583.665    23589.862    24236.297
- 67  TVMe          11889.643    101 23981.285    23987.015    24609.056
- 68  TVMe+I        11889.645    102 23983.291    23989.135    24617.276
- 69  TVMe+G4       11889.738    102 23983.477    23989.322    24617.463
- 89  TIM3+F        11772.679    103 23751.357    23757.318    24391.559
- 90  TIM3+F+I      11772.678    104 23753.357    23759.435    24399.774
- 91  TIM3+F+G4     11772.758    104 23753.517    23759.595    24399.933
-111  TIM3e         11941.440    100 24082.880    24088.496    24704.435
-112  TIM3e+I       11941.441    101 24084.883    24090.613    24712.653
-113  TIM3e+G4      11941.543    101 24085.087    24090.817    24712.857
-133  TIM2+F        11752.508    103 23711.015    23716.976    24351.217
+  1  GTR+F         11686.393    105 23582.786    23588.983    24235.418
+  2  GTR+F+I       11686.404    106 23584.808    23591.125    24243.656
+  3  GTR+F+G4      11686.458    106 23584.915    23591.232    24243.763
+  4  GTR+F+I+G4    11689.707    107 23593.414    23599.852    24258.478
+  5  GTR+F+R2      11686.457    107 23586.914    23593.352    24251.978
+  6  GTR+F+R3      11686.424    109 23590.849    23597.532    24268.343
+ 14  GTR+F+I+R2    11688.111    108 23592.222    23598.782    24263.501
+ 15  GTR+F+I+R3    11687.522    110 23595.045    23601.853    24278.755
+ 23  SYM           11889.356    102 23982.712    23988.557    24616.698
+ 24  SYM+I         11889.356    103 23984.712    23990.673    24624.913
+ 25  SYM+G4        11889.454    103 23984.908    23990.869    24625.110
+ 45  TVM+F         11686.769    104 23581.539    23587.617    24227.956
+ 46  TVM+F+I       11686.763    105 23583.527    23589.724    24236.159
+ 47  TVM+F+G4      11686.832    105 23583.664    23589.861    24236.296
+ 67  TVMe          11889.642    101 23981.284    23987.014    24609.055
+ 68  TVMe+I        11889.646    102 23983.291    23989.136    24617.277
+ 69  TVMe+G4       11889.745    102 23983.490    23989.335    24617.476
+ 89  TIM3+F        11772.678    103 23751.356    23757.317    24391.557
+ 90  TIM3+F+I      11772.678    104 23753.356    23759.434    24399.773
+ 91  TIM3+F+G4     11772.758    104 23753.515    23759.594    24399.932
+111  TIM3e         11941.439    100 24082.879    24088.495    24704.434
+112  TIM3e+I       11941.441    101 24084.882    24090.612    24712.652
+113  TIM3e+G4      11941.543    101 24085.086    24090.816    24712.856
+133  TIM2+F        11752.507    103 23711.014    23716.975    24351.215
 134  TIM2+F+I      11752.508    104 23713.016    23719.094    24359.433
-135  TIM2+F+G4     11752.583    104 23713.166    23719.244    24359.583
-155  TIM2e         11929.540    100 24059.079    24064.695    24680.634
-156  TIM2e+I       11929.540    101 24061.081    24066.811    24688.851
-157  TIM2e+G4      11929.639    101 24061.277    24067.007    24689.048
-177  TIM+F         11750.878    103 23707.755    23713.716    24347.957
-178  TIM+F+I       11750.878    104 23709.755    23715.834    24356.172
-179  TIM+F+G4      11750.957    104 23709.915    23715.993    24356.332
-199  TIMe          11921.642    100 24043.284    24048.900    24664.839
-200  TIMe+I        11921.643    101 24045.285    24051.015    24673.055
-201  TIMe+G4       11921.743    101 24045.485    24051.215    24673.256
-221  TPM3u+F       11773.054    102 23750.107    23755.952    24384.093
-222  TPM3u+F+I     11773.054    103 23752.108    23758.069    24392.309
-223  TPM3u+F+G4    11773.134    103 23752.267    23758.228    24392.469
-243  TPM3          11941.720    99  24081.440    24086.943    24696.779
-244  TPM3+I        11941.720    100 24083.440    24089.056    24704.995
-245  TPM3+G4       11941.820    100 24083.639    24089.255    24705.194
-265  TPM2u+F       11752.882    102 23709.765    23715.609    24343.750
-266  TPM2u+F+I     11752.882    103 23711.764    23717.725    24351.966
-267  TPM2u+F+G4    11752.957    103 23711.915    23717.876    24352.116
-287  TPM2          11929.829    99  24057.658    24063.161    24672.998
-288  TPM2+I        11929.825    100 24059.651    24065.267    24681.206
-289  TPM2+G4       11929.923    100 24059.847    24065.463    24681.402
-309  K3Pu+F        11751.253    102 23706.506    23712.351    24340.492
-310  K3Pu+F+I      11751.253    103 23708.506    23714.467    24348.708
-311  K3Pu+F+G4     11751.334    103 23708.669    23714.630    24348.870
-331  K3P           11921.924    99  24041.847    24047.351    24657.187
-332  K3P+I         11921.924    100 24043.848    24049.464    24665.403
-333  K3P+G4        11922.024    100 24044.048    24049.664    24665.603
-353  TN+F          11804.704    102 23813.408    23819.253    24447.394
-354  TN+F+I        11804.704    103 23815.408    23821.369    24455.610
-355  TN+F+G4       11804.790    103 23815.579    23821.541    24455.781
-375  TNe           11951.598    99  24101.195    24106.698    24716.534
-376  TNe+I         11951.598    100 24103.195    24108.811    24724.750
-377  TNe+G4        11951.698    100 24103.396    24109.011    24724.950
-397  HKY+F         11805.079    101 23812.159    23817.888    24439.929
-398  HKY+F+I       11805.079    102 23814.159    23820.004    24448.145
-399  HKY+F+G4      11805.165    102 23814.330    23820.174    24448.315
-419  K2P           11951.879    98  24099.759    24105.150    24708.883
-420  K2P+I         11951.880    99  24101.759    24107.262    24717.098
-421  K2P+G4        11951.980    99  24101.959    24107.462    24717.298
-441  F81+F         12139.909    100 24479.818    24485.434    25101.373
-442  F81+F+I       12139.909    101 24481.819    24487.548    25109.589
-443  F81+F+G4      12140.006    101 24482.011    24487.741    25109.781
-463  JC            12226.871    97  24647.742    24653.023    25250.650
-464  JC+I          12226.871    98  24649.742    24655.133    25258.866
-465  JC+G4         12226.972    98  24649.943    24655.335    25259.067
+135  TIM2+F+G4     11752.582    104 23713.165    23719.243    24359.582
+155  TIM2e         11929.539    100 24059.078    24064.694    24680.633
+156  TIM2e+I       11929.540    101 24061.080    24066.810    24688.851
+157  TIM2e+G4      11929.638    101 24061.277    24067.007    24689.047
+177  TIM+F         11750.877    103 23707.754    23713.715    24347.955
+178  TIM+F+I       11750.877    104 23709.754    23715.833    24356.171
+179  TIM+F+G4      11750.957    104 23709.914    23715.992    24356.331
+199  TIMe          11921.642    100 24043.283    24048.899    24664.838
+200  TIMe+I        11921.642    101 24045.284    24051.014    24673.054
+201  TIMe+G4       11921.742    101 24045.484    24051.214    24673.255
+221  TPM3u+F       11773.053    102 23750.106    23755.951    24384.092
+222  TPM3u+F+I     11773.053    103 23752.106    23758.068    24392.308
+223  TPM3u+F+G4    11773.133    103 23752.266    23758.227    24392.467
+243  TPM3          11941.719    99  24081.439    24086.942    24696.778
+244  TPM3+I        11941.720    100 24083.441    24089.057    24704.995
+245  TPM3+G4       11941.819    100 24083.638    24089.254    24705.193
+265  TPM2u+F       11752.881    102 23709.763    23715.607    24343.748
+266  TPM2u+F+I     11752.881    103 23711.763    23717.724    24351.964
+267  TPM2u+F+G4    11752.957    103 23711.914    23717.875    24352.115
+287  TPM2          11929.825    99  24057.649    24063.153    24672.989
+288  TPM2+I        11929.825    100 24059.650    24065.266    24681.205
+289  TPM2+G4       11929.923    100 24059.846    24065.462    24681.401
+309  K3Pu+F        11751.253    102 23706.505    23712.350    24340.491
+310  K3Pu+F+I      11751.253    103 23708.505    23714.466    24348.707
+311  K3Pu+F+G4     11751.334    103 23708.668    23714.629    24348.870
+331  K3P           11921.923    99  24041.846    24047.349    24657.186
+332  K3P+I         11921.923    100 24043.847    24049.463    24665.401
+333  K3P+G4        11922.023    100 24044.047    24049.663    24665.602
+353  TN+F          11804.704    102 23813.407    23819.252    24447.393
+354  TN+F+I        11804.704    103 23815.407    23821.368    24455.609
+355  TN+F+G4       11804.789    103 23815.578    23821.539    24455.780
+375  TNe           11951.597    99  24101.194    24106.697    24716.533
+376  TNe+I         11951.597    100 24103.194    24108.810    24724.749
+377  TNe+G4        11951.697    100 24103.394    24109.010    24724.949
+397  HKY+F         11805.079    101 23812.157    23817.887    24439.928
+398  HKY+F+I       11805.079    102 23814.158    23820.002    24448.143
+399  HKY+F+G4      11805.164    102 23814.328    23820.173    24448.314
+419  K2P           11951.879    98  24099.758    24105.149    24708.882
+420  K2P+I         11951.879    99  24101.758    24107.261    24717.097
+421  K2P+G4        11951.979    99  24101.958    24107.461    24717.297
+441  F81+F         12139.909    100 24479.817    24485.433    25101.372
+442  F81+F+I       12139.909    101 24481.817    24487.547    25109.588
+443  F81+F+G4      12140.005    101 24482.010    24487.740    25109.780
+463  JC            12226.870    97  24647.741    24653.022    25250.649
+464  JC+I          12226.870    98  24649.741    24655.132    25258.865
+465  JC+G4         12226.971    98  24649.942    24655.333    25259.066
 Akaike Information Criterion:           TVM+F
 Corrected Akaike Information Criterion: TVM+F
 Bayesian Information Criterion:         TVM+F
 Best-fit model: TVM+F chosen according to BIC
 
 All model information printed to STEC_Clade1.fasta.model.gz
-CPU time for ModelFinder: 6.299 seconds (0h:0m:6s)
-Wall-clock time for ModelFinder: 6.432 seconds (0h:0m:6s)
+CPU time for ModelFinder: 5.460 seconds (0h:0m:5s)
+Wall-clock time for ModelFinder: 5.645 seconds (0h:0m:5s)
 
 NOTE: 0 MB RAM (0 GB) is required!
 Estimate model parameters (epsilon = 0.010)
-1. Initial log-likelihood: -11686.777
-Optimal log-likelihood: -11686.777
-Rate parameters:  A-C: 1.29922  A-G: 3.75003  A-T: 1.46880  C-G: 0.09452  C-T: 3.75003  G-T: 1.00000
+1. Initial log-likelihood: -11686.769
+Optimal log-likelihood: -11686.769
+Rate parameters:  A-C: 1.29026  A-G: 3.73307  A-T: 1.46021  C-G: 0.09401  C-T: 3.73307  G-T: 1.00000
 Base frequencies:  A: 0.156  C: 0.307  G: 0.392  T: 0.145
-Parameters optimization took 1 rounds (0.005 sec)
+Parameters optimization took 1 rounds (0.007 sec)
 Wrote distance file to... 
-BEST SCORE FOUND : -11686.777
+BEST SCORE FOUND : -11686.769
 Total tree length: 0.259
 
 Total number of iterations: 0
 CPU time used for tree search: 0.000 sec (0h:0m:0s)
 Wall-clock time used for tree search: 0.000 sec (0h:0m:0s)
 Total CPU time used: 0.011 sec (0h:0m:0s)
-Total wall-clock time used: 0.015 sec (0h:0m:0s)
+Total wall-clock time used: 0.025 sec (0h:0m:0s)
 
 Analysis results written to: 
   IQ-TREE report:                STEC_Clade1.fasta.iqtree
   Tree used for ModelFinder:     STEC_Clade1.fasta.treefile
   Screen log file:               STEC_Clade1.fasta.log
 
-Date and Time: Tue Jun 23 16:24:58 2026
+Date and Time: Sun Jun 28 18:24:40 2026
 IQ-TREE multicore version 2.2.2.2 COVID-edition for Linux 64-bit built Feb 10 2023
 Developed by Bui Quang Minh, James Barbetti, Nguyen Lam Tung,
 Olga Chernomor, Heiko Schmidt, Dominik Schrempf, Michael Woodhams, Ly Trong Nhan.
 
-Host:    c027.hpc.nesi.org.nz (AVX512, FMA3, 376 GB RAM)
-Command: iqtree -s STEC_Clade2.fasta -m MF
-Seed:    519879 (Using SPRNG - Scalable Parallel Random Number Generator)
-Time:    Tue Jun 23 16:24:58 2026
+Host:    c001.hpc.nesi.org.nz (AVX512, FMA3, 376 GB RAM)
+Command: iqtree --redo -s STEC_Clade2.fasta -m MF
+Seed:    176365 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Sun Jun 28 18:24:40 2026
 Kernel:  AVX+FMA - 1 threads (32 CPU cores detected)
 
 HINT: Use -nt option to specify number of threads because your CPU has 32 cores!
 HINT: -nt AUTO will automatically determine the best number of threads to use.
 
 Reading alignment file STEC_Clade2.fasta ... Fasta format detected
-Reading fasta file: done in 0.00278852 secs using 52.14% CPU
+Reading fasta file: done in 0.00266548 secs using 20.22% CPU
 Alignment most likely contains DNA/RNA sequences
-Constructing alignment: done in 0.00461962 secs using 53.42% CPU
+Constructing alignment: done in 0.0040989 secs using 22.01% CPU
 Alignment has 46 sequences with 3698 columns, 274 distinct patterns
 137 parsimony-informative, 733 singleton sites, 2828 constant sites
                                         Gap/Ambiguity  Composition  p-value
-Analyzing sequences: done in 2.54475e-05 secs using 94.31% CPU
-   1  13ER-4703|WY12a|SI|bovine|31/07/2013      0.00%    passed     99.95%
-   2  13ER-5169|WY12a|NI|bovine|28/08/2013      0.00%    passed     97.45%
-   3  14ER-2496|WY12a|NI|bovine|12/08/2014      0.00%    passed     99.52%
-   4  14ER-3009|WY12a|SI|bovine|18/09/2014      0.00%    passed     99.99%
-   5  36ST-1|WY12a|NI|bovine|23/08/2008         0.00%    passed     99.63%
-   6  ERL-04-3328|WY12a|NI|human|20/10/2004     0.00%    passed     82.22%
-   7  ERL-05-1243|WY12a|NI|human|24/03/2005     0.00%    passed     99.52%
-   8  ERL-06-677|WY12a|NI|human|8/12/2006       0.00%    passed     99.88%
-   9  ERL-07-3071|WY12a|SI|human|14/09/2007     0.00%    passed     99.87%
-  10  ERL-08-2124|WY12a|SI|human|4/06/2008      0.00%    passed     99.66%
-  11  ERL_051037|Y1|SI|human|24/03/2005         0.00%    passed     97.88%
-  12  ERL_07467|WY12a|NI|human|15/02/2007       0.00%    passed     99.29%
-  13  ERL_084313|Y2c|SI|human|28/11/2008        0.00%    passed     45.82%
-  14  ERL04-1335|WY12a||human|26/04/2004        0.00%    passed     99.90%
-  15  ERL04-2149|WY12a|NI|bovine|23/07/2004     0.00%    passed     99.76%
-  16  ERL04-3193|WY12a|SI|bovine|8/10/2004      0.00%    passed     99.36%
-  17  ERL04-3264|WY12a|SI|bovine|15/10/2004     0.00%    passed     99.36%
-  18  ERL05-2493|WY12a|NI|bovine|29/07/2005     0.00%    passed     99.85%
-  19  ERL05-623|WY12a|SI|bovine|8/12/2005       0.00%    passed     99.90%
-  20  ERL06-3117|WY12a|SI|bovine|21/08/2006     0.00%    passed     99.79%
-  21  ERL06-3513|WY12a|NI|bovine|11/09/2006     0.00%    passed     99.66%
-  22  ERL07-2638|WY12a|NI|bovine|6/08/2007      0.00%    passed     99.99%
-  23  ERL08-2000|SY2c|NI|human|26/05/2008       0.00%    passed     35.74%
-  24  ERL08949|WY12a|NI|human|27/11/2008        0.00%    passed     99.82%
-  25  ERL09-3051|WY12a|NI|human|29/08/2009      0.00%    passed     99.82%
-  26  ERL09-3411|WY1|SI|bovine|30/09/2009       0.00%    passed     99.67%
-  27  ERL093134|WY12a|SI|human|23/09/2009       0.00%    passed     99.98%
-  28  ERL10-2267|WY12a|SI|bovine|12/07/2010     0.00%    passed     99.84%
-  29  ERL101381|WY12a|SI|human|9/11/2009        0.00%    passed     99.98%
-  30  ERL101788|WY12a|NI|human|5/05/2010        0.00%    passed     99.87%
-  31  ERL11-2437|WY12a|NI|bovine|8/06/2011      0.00%    passed     99.82%
-  32  ERL11-2652|WY12a|SI|bovine|23/07/2011     0.00%    passed     99.92%
-  33  ERL11-411|AWY12a|NI|human|27/10/2011      0.00%    passed     99.09%
-  34  ERL111878|WY12a|NI|human|4/05/2011        0.00%    passed     99.92%
-  35  ERL112838|WY12a|SI|human|22/08/2011       0.00%    passed     99.67%
-  36  ERL12-857|Y1|NI|human|17/02/2012          0.00%    passed     99.98%
-  37  ERL121115|WY12a|NI|human|8/02/2011        0.00%    passed     99.87%
-  38  ERL121207|WY12a|SI|human|31/03/2012       0.00%    passed     99.87%
-  39  H12ESR-1893|WY1|SI|bovine|14/10/2010      0.00%    passed     99.91%
-  40  H12ESR-3001|WY12a|NI|bovine|23/08/2012    0.00%    passed     99.10%
-  41  H13ER-3948|WY12a|NI|human|1/11/2012       0.00%    passed     99.88%
-  42  H13ESR-1331|WY12a|SI|human|27/11/2013     0.00%    passed     99.34%
-  43  H14ER-1075|WY12a|SI|human|29/04/2013      0.00%    passed     99.09%
-  44  H14ER-1245|WY12a|NI|human|7/01/2014       0.00%    passed     99.38%
-  45  H174a|WY12a|NI|bovine|24/03/2011          0.00%    passed     99.86%
-  46  h25a|WY12a|NI|bovine|21/08/2009           0.00%    passed     99.29%
+Analyzing sequences: done in 2.28435e-05 secs using 96.31% CPU
+   1  13ER-4703|WY12a|SI|bovine|31-07-2013      0.00%    passed     99.95%
+   2  13ER-5169|WY12a|NI|bovine|28-08-2013      0.00%    passed     97.45%
+   3  14ER-2496|WY12a|NI|bovine|12-08-2014      0.00%    passed     99.52%
+   4  14ER-3009|WY12a|SI|bovine|18-09-2014      0.00%    passed     99.99%
+   5  36ST-1|WY12a|NI|bovine|23-08-2008         0.00%    passed     99.63%
+   6  ERL-04-3328|WY12a|NI|human|20-10-2004     0.00%    passed     82.22%
+   7  ERL-05-1243|WY12a|NI|human|24-03-2005     0.00%    passed     99.52%
+   8  ERL-06-677|WY12a|NI|human|8-12-2006       0.00%    passed     99.88%
+   9  ERL-07-3071|WY12a|SI|human|14-09-2007     0.00%    passed     99.87%
+  10  ERL-08-2124|WY12a|SI|human|4-06-2008      0.00%    passed     99.66%
+  11  ERL_051037|Y1|SI|human|24-03-2005         0.00%    passed     97.88%
+  12  ERL_07467|WY12a|NI|human|15-02-2007       0.00%    passed     99.29%
+  13  ERL_084313|Y2c|SI|human|28-11-2008        0.00%    passed     45.82%
+  14  ERL04-1335|WY12a||human|26-04-2004        0.00%    passed     99.90%
+  15  ERL04-2149|WY12a|NI|bovine|23-07-2004     0.00%    passed     99.76%
+  16  ERL04-3193|WY12a|SI|bovine|8-10-2004      0.00%    passed     99.36%
+  17  ERL04-3264|WY12a|SI|bovine|15-10-2004     0.00%    passed     99.36%
+  18  ERL05-2493|WY12a|NI|bovine|29-07-2005     0.00%    passed     99.85%
+  19  ERL05-623|WY12a|SI|bovine|8-12-2005       0.00%    passed     99.90%
+  20  ERL06-3117|WY12a|SI|bovine|21-08-2006     0.00%    passed     99.79%
+  21  ERL06-3513|WY12a|NI|bovine|11-09-2006     0.00%    passed     99.66%
+  22  ERL07-2638|WY12a|NI|bovine|6-08-2007      0.00%    passed     99.99%
+  23  ERL08-2000|SY2c|NI|human|26-05-2008       0.00%    passed     35.74%
+  24  ERL08949|WY12a|NI|human|27-11-2008        0.00%    passed     99.82%
+  25  ERL09-3051|WY12a|NI|human|29-08-2009      0.00%    passed     99.82%
+  26  ERL09-3411|WY1|SI|bovine|30-09-2009       0.00%    passed     99.67%
+  27  ERL093134|WY12a|SI|human|23-09-2009       0.00%    passed     99.98%
+  28  ERL10-2267|WY12a|SI|bovine|12-07-2010     0.00%    passed     99.84%
+  29  ERL101381|WY12a|SI|human|9-11-2009        0.00%    passed     99.98%
+  30  ERL101788|WY12a|NI|human|5-05-2010        0.00%    passed     99.87%
+  31  ERL11-2437|WY12a|NI|bovine|8-06-2011      0.00%    passed     99.82%
+  32  ERL11-2652|WY12a|SI|bovine|23-07-2011     0.00%    passed     99.92%
+  33  ERL11-411|AWY12a|NI|human|27-10-2011      0.00%    passed     99.09%
+  34  ERL111878|WY12a|NI|human|4-05-2011        0.00%    passed     99.92%
+  35  ERL112838|WY12a|SI|human|22-08-2011       0.00%    passed     99.67%
+  36  ERL12-857|Y1|NI|human|17-02-2012          0.00%    passed     99.98%
+  37  ERL121115|WY12a|NI|human|8-02-2011        0.00%    passed     99.87%
+  38  ERL121207|WY12a|SI|human|31-03-2012       0.00%    passed     99.87%
+  39  H12ESR-1893|WY1|SI|bovine|14-10-2010      0.00%    passed     99.91%
+  40  H12ESR-3001|WY12a|NI|bovine|23-08-2012    0.00%    passed     99.10%
+  41  H13ER-3948|WY12a|NI|human|1-11-2012       0.00%    passed     99.88%
+  42  H13ESR-1331|WY12a|SI|human|27-11-2013     0.00%    passed     99.34%
+  43  H14ER-1075|WY12a|SI|human|29-04-2013      0.00%    passed     99.09%
+  44  H14ER-1245|WY12a|NI|human|7-01-2014       0.00%    passed     99.38%
+  45  H174a|WY12a|NI|bovine|24-03-2011          0.00%    passed     99.86%
+  46  h25a|WY12a|NI|bovine|21-08-2009           0.00%    passed     99.29%
 ****  TOTAL                                     0.00%  0 sequences failed composition chi2 test (p-value<5%; df=3)
-NOTE: ERL04-3264|WY12a|SI|bovine|15/10/2004 is identical to ERL04-3193|WY12a|SI|bovine|8/10/2004 but kept for subsequent analysis
-NOTE: ERL121207|WY12a|SI|human|31/03/2012 is identical to ERL121115|WY12a|NI|human|8/02/2011 but kept for subsequent analysis
-Checking for duplicate sequences: done in 0.000136506 secs using 99.63% CPU
+NOTE: ERL04-3264|WY12a|SI|bovine|15-10-2004 is identical to ERL04-3193|WY12a|SI|bovine|8-10-2004 but kept for subsequent analysis
+NOTE: ERL121207|WY12a|SI|human|31-03-2012 is identical to ERL121115|WY12a|NI|human|8-02-2011 but kept for subsequent analysis
+Checking for duplicate sequences: done in 0.00054837 secs using 5.835% CPU
 
-Creating fast initial parsimony tree by random order stepwise addition...
-0.006 seconds, parsimony score: 872 (based on 870 sites)
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.002 seconds
 Perform fast likelihood tree search using GTR+I+G model...
 Estimate model parameters (epsilon = 5.000)
 Perform nearest neighbor interchange...
-Optimizing NNI: done in 0.0196883 secs using 98.75% CPU
+Optimizing NNI: done in 0.0173775 secs using 93.06% CPU
 Estimate model parameters (epsilon = 1.000)
-1. Initial log-likelihood: -10379.695
-2. Current log-likelihood: -10377.206
-3. Current log-likelihood: -10374.854
-4. Current log-likelihood: -10372.728
-5. Current log-likelihood: -10370.805
-6. Current log-likelihood: -10369.056
-7. Current log-likelihood: -10367.449
-8. Current log-likelihood: -10365.980
-9. Current log-likelihood: -10364.627
-10. Current log-likelihood: -10363.375
-11. Current log-likelihood: -10362.214
-12. Current log-likelihood: -10361.133
-13. Current log-likelihood: -10360.124
-Optimal log-likelihood: -10359.145
-Rate parameters:  A-C: 1.34175  A-G: 3.75349  A-T: 1.67801  C-G: 0.15168  C-T: 3.64692  G-T: 1.00000
+1. Initial log-likelihood: -10379.733
+2. Current log-likelihood: -10377.238
+3. Current log-likelihood: -10374.881
+4. Current log-likelihood: -10372.749
+5. Current log-likelihood: -10370.822
+6. Current log-likelihood: -10369.069
+7. Current log-likelihood: -10367.468
+8. Current log-likelihood: -10365.998
+9. Current log-likelihood: -10364.644
+10. Current log-likelihood: -10363.389
+11. Current log-likelihood: -10362.224
+12. Current log-likelihood: -10361.139
+13. Current log-likelihood: -10360.128
+Optimal log-likelihood: -10359.147
+Rate parameters:  A-C: 1.33072  A-G: 3.73350  A-T: 1.65939  C-G: 0.15040  C-T: 3.62742  G-T: 1.00000
 Base frequencies:  A: 0.158  C: 0.308  G: 0.390  T: 0.144
 Proportion of invariable sites: 0.228
 Gamma shape alpha: 998.446
-Parameters optimization took 13 rounds (0.143 sec)
-Time for fast ML tree search: 0.272 seconds
+Parameters optimization took 13 rounds (0.133 sec)
+Time for fast ML tree search: 0.248 seconds
 
 NOTE: ModelFinder requires 4 MB RAM!
 ModelFinder will test up to 484 DNA models (sample size: 3698) ...
  No. Model         -LnL         df  AIC          AICc         BIC
-  1  GTR+F         10336.282    97  20866.565    20871.846    21469.473
+  1  GTR+F         10336.282    97  20866.564    20871.845    21469.472
   2  GTR+F+I       10336.284    98  20868.567    20873.959    21477.691
   3  GTR+F+G4      10336.334    98  20868.668    20874.060    21477.792
-  4  GTR+F+I+G4    10340.578    99  20879.156    20884.659    21494.495
-  5  GTR+F+R2      10336.394    99  20870.788    20876.291    21486.127
-  6  GTR+F+R3      10336.338    101 20874.676    20880.406    21502.447
- 14  GTR+F+I+R2    10338.579    100 20877.158    20882.774    21498.713
- 15  GTR+F+I+R3    10337.832    102 20879.663    20885.508    21513.649
+  4  GTR+F+I+G4    10340.579    99  20879.159    20884.662    21494.498
+  5  GTR+F+R2      10336.401    99  20870.801    20876.304    21486.140
+  6  GTR+F+R3      10336.338    101 20874.676    20880.406    21502.446
+ 14  GTR+F+I+R2    10338.579    100 20877.159    20882.775    21498.713
+ 15  GTR+F+I+R3    10337.830    102 20879.660    20885.504    21513.646
  23  SYM           10584.383    94  21356.766    21361.723    21941.028
- 24  SYM+I         10584.399    95  21358.798    21363.862    21949.275
- 25  SYM+G4        10584.450    95  21358.901    21363.964    21949.378
+ 24  SYM+I         10584.397    95  21358.795    21363.859    21949.272
+ 25  SYM+G4        10584.451    95  21358.901    21363.965    21949.378
  45  TVM+F         10336.329    96  20864.658    20869.830    21461.351
- 46  TVM+F+I       10336.329    97  20866.658    20871.940    21469.567
- 47  TVM+F+G4      10336.382    97  20866.764    20872.045    21469.672
+ 46  TVM+F+I       10336.329    97  20866.658    20871.939    21469.566
+ 47  TVM+F+G4      10336.381    97  20866.762    20872.043    21469.670
  67  TVMe          10586.172    93  21358.345    21363.196    21936.391
- 68  TVMe+I        10586.169    94  21360.339    21365.296    21944.600
- 69  TVMe+G4       10586.242    94  21360.484    21365.441    21944.746
+ 68  TVMe+I        10586.169    94  21360.338    21365.295    21944.599
+ 69  TVMe+G4       10586.243    94  21360.487    21365.443    21944.748
  89  TIM3+F        10402.122    95  20994.243    20999.307    21584.720
  90  TIM3+F+I      10402.122    96  20996.243    21001.415    21592.936
  91  TIM3+F+G4     10402.180    96  20996.361    21001.532    21593.053
@@ -342,25 +341,25 @@ ModelFinder will test up to 484 DNA models (sample size: 3698) ...
 133  TIM2+F        10381.261    95  20952.522    20957.586    21542.999
 134  TIM2+F+I      10381.260    96  20954.520    20959.692    21551.213
 135  TIM2+F+G4     10381.318    96  20954.637    20959.809    21551.329
-155  TIM2e         10607.418    92  21398.836    21403.583    21970.667
+155  TIM2e         10607.418    92  21398.836    21403.583    21970.666
 156  TIM2e+I       10607.414    93  21400.828    21405.680    21978.874
 157  TIM2e+G4      10607.485    93  21400.971    21405.822    21979.017
-177  TIM+F         10387.750    95  20965.500    20970.564    21555.977
+177  TIM+F         10387.750    95  20965.500    20970.563    21555.977
 178  TIM+F+I       10387.750    96  20967.499    20972.671    21564.192
-179  TIM+F+G4      10387.808    96  20967.616    20972.788    21564.308
+179  TIM+F+G4      10387.808    96  20967.616    20972.787    21564.308
 199  TIMe          10607.593    92  21399.186    21403.933    21971.016
 200  TIMe+I        10607.600    93  21401.200    21406.051    21979.246
 201  TIMe+G4       10607.664    93  21401.329    21406.180    21979.375
-221  TPM3u+F       10402.174    94  20992.348    20997.305    21576.610
-222  TPM3u+F+I     10402.171    95  20994.342    20999.406    21584.819
+221  TPM3u+F       10402.174    94  20992.348    20997.305    21576.609
+222  TPM3u+F+I     10402.171    95  20994.342    20999.405    21584.819
 223  TPM3u+F+G4    10402.229    95  20994.459    20999.523    21584.936
-243  TPM3          10621.536    91  21425.072    21429.716    21990.687
+243  TPM3          10621.536    91  21425.072    21429.715    21990.687
 244  TPM3+I        10621.536    92  21427.073    21431.820    21998.903
 245  TPM3+G4       10621.609    92  21427.217    21431.964    21999.048
-265  TPM2u+F       10381.305    94  20950.610    20955.567    21534.871
-266  TPM2u+F+I     10381.306    95  20952.612    20957.676    21543.089
+265  TPM2u+F       10381.305    94  20950.609    20955.566    21534.871
+266  TPM2u+F+I     10381.305    95  20952.610    20957.674    21543.087
 267  TPM2u+F+G4    10381.361    95  20952.722    20957.785    21543.199
-287  TPM2          10609.218    91  21400.435    21405.079    21966.050
+287  TPM2          10609.218    91  21400.435    21405.078    21966.050
 288  TPM2+I        10609.217    92  21402.435    21407.182    21974.265
 289  TPM2+G4       10609.288    92  21402.576    21407.323    21974.407
 309  K3Pu+F        10387.795    94  20963.590    20968.547    21547.851
@@ -368,14 +367,14 @@ ModelFinder will test up to 484 DNA models (sample size: 3698) ...
 311  K3Pu+F+G4     10387.853    95  20965.705    20970.769    21556.182
 331  K3P           10609.365    91  21400.730    21405.373    21966.345
 332  K3P+I         10609.366    92  21402.732    21407.479    21974.563
-333  K3P+G4        10609.438    92  21402.876    21407.622    21974.706
+333  K3P+G4        10609.438    92  21402.875    21407.622    21974.706
 353  TN+F          10427.427    94  21042.855    21047.812    21627.116
 354  TN+F+I        10427.428    95  21044.855    21049.919    21635.332
-355  TN+F+G4       10427.490    95  21044.980    21050.044    21635.457
+355  TN+F+G4       10427.490    95  21044.980    21050.043    21635.457
 375  TNe           10626.381    91  21434.763    21439.406    22000.378
 376  TNe+I         10626.382    92  21436.763    21441.510    22008.593
 377  TNe+G4        10626.453    92  21436.906    21441.653    22008.736
-397  HKY+F         10427.474    93  21040.949    21045.800    21618.994
+397  HKY+F         10427.474    93  21040.948    21045.800    21618.994
 398  HKY+F+I       10427.474    94  21042.949    21047.906    21627.210
 399  HKY+F+G4      10427.536    94  21043.073    21048.030    21627.334
 419  K2P           10628.155    90  21436.310    21440.851    21995.710
@@ -393,16 +392,16 @@ Bayesian Information Criterion:         TVM+F
 Best-fit model: TVM+F chosen according to BIC
 
 All model information printed to STEC_Clade2.fasta.model.gz
-CPU time for ModelFinder: 4.070 seconds (0h:0m:4s)
-Wall-clock time for ModelFinder: 4.203 seconds (0h:0m:4s)
+CPU time for ModelFinder: 3.725 seconds (0h:0m:3s)
+Wall-clock time for ModelFinder: 3.892 seconds (0h:0m:3s)
 
 NOTE: 0 MB RAM (0 GB) is required!
 Estimate model parameters (epsilon = 0.010)
 1. Initial log-likelihood: -10336.329
 Optimal log-likelihood: -10336.329
-Rate parameters:  A-C: 1.30415  A-G: 3.58810  A-T: 1.57529  C-G: 0.15786  C-T: 3.58810  G-T: 1.00000
+Rate parameters:  A-C: 1.30398  A-G: 3.58380  A-T: 1.57350  C-G: 0.15760  C-T: 3.58380  G-T: 1.00000
 Base frequencies:  A: 0.158  C: 0.308  G: 0.390  T: 0.144
-Parameters optimization took 1 rounds (0.003 sec)
+Parameters optimization took 1 rounds (0.005 sec)
 Wrote distance file to... 
 BEST SCORE FOUND : -10336.329
 Total tree length: 0.246
@@ -410,95 +409,95 @@ Total tree length: 0.246
 Total number of iterations: 0
 CPU time used for tree search: 0.000 sec (0h:0m:0s)
 Wall-clock time used for tree search: 0.000 sec (0h:0m:0s)
-Total CPU time used: 0.010 sec (0h:0m:0s)
-Total wall-clock time used: 0.013 sec (0h:0m:0s)
+Total CPU time used: 0.009 sec (0h:0m:0s)
+Total wall-clock time used: 0.030 sec (0h:0m:0s)
 
 Analysis results written to: 
   IQ-TREE report:                STEC_Clade2.fasta.iqtree
   Tree used for ModelFinder:     STEC_Clade2.fasta.treefile
   Screen log file:               STEC_Clade2.fasta.log
 
-Date and Time: Tue Jun 23 16:25:02 2026
+Date and Time: Sun Jun 28 18:24:44 2026
 IQ-TREE multicore version 2.2.2.2 COVID-edition for Linux 64-bit built Feb 10 2023
 Developed by Bui Quang Minh, James Barbetti, Nguyen Lam Tung,
 Olga Chernomor, Heiko Schmidt, Dominik Schrempf, Michael Woodhams, Ly Trong Nhan.
 
-Host:    c027.hpc.nesi.org.nz (AVX512, FMA3, 376 GB RAM)
-Command: iqtree -s STEC_Clade3.fasta -m MF
-Seed:    784662 (Using SPRNG - Scalable Parallel Random Number Generator)
-Time:    Tue Jun 23 16:25:02 2026
+Host:    c001.hpc.nesi.org.nz (AVX512, FMA3, 376 GB RAM)
+Command: iqtree --redo -s STEC_Clade3.fasta -m MF
+Seed:    181126 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Sun Jun 28 18:24:44 2026
 Kernel:  AVX+FMA - 1 threads (32 CPU cores detected)
 
 HINT: Use -nt option to specify number of threads because your CPU has 32 cores!
 HINT: -nt AUTO will automatically determine the best number of threads to use.
 
 Reading alignment file STEC_Clade3.fasta ... Fasta format detected
-Reading fasta file: done in 0.00292119 secs using 88.7% CPU
+Reading fasta file: done in 0.00284706 secs using 47.87% CPU
 Alignment most likely contains DNA/RNA sequences
-Constructing alignment: done in 0.00446832 secs using 78.91% CPU
+Constructing alignment: done in 0.00424725 secs using 39.63% CPU
 Alignment has 48 sequences with 3698 columns, 508 distinct patterns
 303 parsimony-informative, 1324 singleton sites, 2071 constant sites
                                         Gap/Ambiguity  Composition  p-value
-Analyzing sequences: done in 4.43384e-05 secs using 96.98% CPU
-   1  14ER-1012|ASY2c|SI|bovine|23/03/2014      0.00%    passed     99.90%
-   2  14ER-2831|ASY2c|NI|bovine|3/09/2014       0.00%    passed     97.03%
-   3  a220a|ASY2c|SI|bovine|18/05/2011          0.00%    passed     99.70%
-   4  e46a|AS2c|NI|bovine|9/02/2010             0.00%    passed     99.43%
-   5  ERL-04-3763|ASY2c|SI|human|2/12/2004      0.00%    passed     99.81%
-   6  ERL-04-602|AY|NI|human|23/02/2004         0.00%    passed     99.53%
-   7  ERL-05-2349|ASY2c|NI|human|20/07/2005     0.00%    passed     99.82%
-   8  ERL-05-3299|SY2c|SI|human|14/09/2005      0.00%    passed     98.99%
-   9  ERL-06-4465|ASY2c|SI|human|28/11/2006     0.00%    passed     99.36%
-  10  ERL-07-155|ASY2c|NI|human|9/01/2007       0.00%    passed     99.11%
-  11  ERL-07-314|ASY2c|SI|human|25/09/2007      0.00%    passed     97.71%
-  12  ERL-08-2021|ASY2c|NI|human|30/05/2008     0.00%    passed     92.31%
-  13  ERL-08-3021|SY2c|SI|human|26/08/2008      0.00%    passed     99.50%
-  14  ERL_061626|SY2c|NI|human|2/05/2006        0.00%    passed     99.86%
-  15  ERL_10197|ASY2c|SI|human|13/01/2010       0.00%    passed     98.45%
-  16  ERL05-1677|ASWY2c|SI|human|16/05/2005     0.00%    passed     97.63%
-  17  ERL05-599|ASY2c|NI|bovine|22/02/2005      0.00%    passed     99.75%
-  18  ERL06-3151|ASY2c|SI|bovine|22/08/2006     0.00%    passed     99.96%
-  19  ERL06-726|ASY2c|SI|human|17/02/2006       0.00%    passed     99.37%
-  20  ERL07-154|ASY2c|NI|bovine|8/04/2007       0.00%    passed     88.71%
-  21  ERL07-2698|ASY2c|SI|bovine|26/08/2007     0.00%    passed     99.23%
-  22  ERL08-1945|AS12c|NI|human|17/05/2008      0.00%    passed     83.81%
-  23  ERL08-4331|AS2c|SI|bovine|22/10/2008      0.00%    passed     98.18%
-  24  ERL08-987|AS2c|NI|bovine|5/03/2008        0.00%    passed     99.52%
-  25  ERL09-1792|ASY2c|SI|human|7/03/2008       0.00%    passed     99.73%
-  26  ERL09-2373|ASY2c|NI|bovine|20/05/2009     0.00%    passed     99.86%
-  27  ERL09-2521|ASY2c|SI|bovine|30/07/2009     0.00%    passed     99.20%
-  28  ERL093688|ASY2c|NI|human|2/11/2009        0.00%    passed     99.90%
-  29  ERL10-1821|WY2c|SI|human|9/06/2010        0.00%    passed     94.51%
-  30  ERL10-2113|AY|NI|human|11/06/2010         0.00%    passed     99.99%
-  31  ERL10-4349|ASY12c|NI|human|20/08/2010     0.00%    passed     86.72%
-  32  ERL10-553|AS2c|NI|human|9/02/2010         0.00%    passed     99.51%
-  33  ERL11-1029|ASY2c|NI|bovine|5/03/2010      0.00%    passed     97.28%
-  34  ERL111881|ASY2c|NI|human|8/06/2011        0.00%    passed     98.83%
-  35  ERL113692|ASY2c|SI|human|1/09/2011        0.00%    passed     98.09%
-  36  ERL12-2002|ASY2c|NI|human|26/04/2012      0.00%    passed     98.09%
-  37  ERL12568|ASY2c|SI|human|5/07/2012         0.00%    passed     99.97%
-  38  h110a|ASY2c|NI|bovine|14/03/2012          0.00%    passed     97.50%
-  39  H12ESR-3003|ASY2c|NI|bovine|17/09/2012    0.00%    passed     96.47%
-  40  H12ESR-4525|ASY2c|SI|bovine|8/10/2012     0.00%    passed     99.95%
-  41  H13ER-6408|ASY2c|SI|human|5/10/2013       0.00%    passed     99.50%
-  42  H13ESR-2152|ASY2c|SI|bovine|2/03/2013     0.00%    passed     99.70%
-  43  H13ESR-2208|ASY2c|NI|bovine|9/04/2013     0.00%    passed     99.95%
-  44  H13ESR-2383|ASY2c|NI|human|3/04/2013      0.00%    passed     99.62%
-  45  H13ESR-2556|ASY2c|SI|bovine|19/04/2013    0.00%    passed     99.56%
-  46  H14ER-115|ASY2c|SI|human|13/03/2014       0.00%    passed     99.11%
-  47  H14ER-913|AS2c|NI|human|14/02/2014        0.00%    passed     99.55%
-  48  T53a|SY2c|SI|bovine|17/08/2010            0.00%    passed     99.63%
+Analyzing sequences: done in 4.03449e-05 secs
+   1  14ER-1012|ASY2c|SI|bovine|23-03-2014      0.00%    passed     99.90%
+   2  14ER-2831|ASY2c|NI|bovine|3-09-2014       0.00%    passed     97.03%
+   3  a220a|ASY2c|SI|bovine|18-05-2011          0.00%    passed     99.70%
+   4  e46a|AS2c|NI|bovine|9-02-2010             0.00%    passed     99.43%
+   5  ERL-04-3763|ASY2c|SI|human|2-12-2004      0.00%    passed     99.81%
+   6  ERL-04-602|AY|NI|human|23-02-2004         0.00%    passed     99.53%
+   7  ERL-05-2349|ASY2c|NI|human|20-07-2005     0.00%    passed     99.82%
+   8  ERL-05-3299|SY2c|SI|human|14-09-2005      0.00%    passed     98.99%
+   9  ERL-06-4465|ASY2c|SI|human|28-11-2006     0.00%    passed     99.36%
+  10  ERL-07-155|ASY2c|NI|human|9-01-2007       0.00%    passed     99.11%
+  11  ERL-07-314|ASY2c|SI|human|25-09-2007      0.00%    passed     97.71%
+  12  ERL-08-2021|ASY2c|NI|human|30-05-2008     0.00%    passed     92.31%
+  13  ERL-08-3021|SY2c|SI|human|26-08-2008      0.00%    passed     99.50%
+  14  ERL_061626|SY2c|NI|human|2-05-2006        0.00%    passed     99.86%
+  15  ERL_10197|ASY2c|SI|human|13-01-2010       0.00%    passed     98.45%
+  16  ERL05-1677|ASWY2c|SI|human|16-05-2005     0.00%    passed     97.63%
+  17  ERL05-599|ASY2c|NI|bovine|22-02-2005      0.00%    passed     99.75%
+  18  ERL06-3151|ASY2c|SI|bovine|22-08-2006     0.00%    passed     99.96%
+  19  ERL06-726|ASY2c|SI|human|17-02-2006       0.00%    passed     99.37%
+  20  ERL07-154|ASY2c|NI|bovine|8-04-2007       0.00%    passed     88.71%
+  21  ERL07-2698|ASY2c|SI|bovine|26-08-2007     0.00%    passed     99.23%
+  22  ERL08-1945|AS12c|NI|human|17-05-2008      0.00%    passed     83.81%
+  23  ERL08-4331|AS2c|SI|bovine|22-10-2008      0.00%    passed     98.18%
+  24  ERL08-987|AS2c|NI|bovine|5-03-2008        0.00%    passed     99.52%
+  25  ERL09-1792|ASY2c|SI|human|7-03-2008       0.00%    passed     99.73%
+  26  ERL09-2373|ASY2c|NI|bovine|20-05-2009     0.00%    passed     99.86%
+  27  ERL09-2521|ASY2c|SI|bovine|30-07-2009     0.00%    passed     99.20%
+  28  ERL093688|ASY2c|NI|human|2-11-2009        0.00%    passed     99.90%
+  29  ERL10-1821|WY2c|SI|human|9-06-2010        0.00%    passed     94.51%
+  30  ERL10-2113|AY|NI|human|11-06-2010         0.00%    passed     99.99%
+  31  ERL10-4349|ASY12c|NI|human|20-08-2010     0.00%    passed     86.72%
+  32  ERL10-553|AS2c|NI|human|9-02-2010         0.00%    passed     99.51%
+  33  ERL11-1029|ASY2c|NI|bovine|5-03-2010      0.00%    passed     97.28%
+  34  ERL111881|ASY2c|NI|human|8-06-2011        0.00%    passed     98.83%
+  35  ERL113692|ASY2c|SI|human|1-09-2011        0.00%    passed     98.09%
+  36  ERL12-2002|ASY2c|NI|human|26-04-2012      0.00%    passed     98.09%
+  37  ERL12568|ASY2c|SI|human|5-07-2012         0.00%    passed     99.97%
+  38  h110a|ASY2c|NI|bovine|14-03-2012          0.00%    passed     97.50%
+  39  H12ESR-3003|ASY2c|NI|bovine|17-09-2012    0.00%    passed     96.47%
+  40  H12ESR-4525|ASY2c|SI|bovine|8-10-2012     0.00%    passed     99.95%
+  41  H13ER-6408|ASY2c|SI|human|5-10-2013       0.00%    passed     99.50%
+  42  H13ESR-2152|ASY2c|SI|bovine|2-03-2013     0.00%    passed     99.70%
+  43  H13ESR-2208|ASY2c|NI|bovine|9-04-2013     0.00%    passed     99.95%
+  44  H13ESR-2383|ASY2c|NI|human|3-04-2013      0.00%    passed     99.62%
+  45  H13ESR-2556|ASY2c|SI|bovine|19-04-2013    0.00%    passed     99.56%
+  46  H14ER-115|ASY2c|SI|human|13-03-2014       0.00%    passed     99.11%
+  47  H14ER-913|AS2c|NI|human|14-02-2014        0.00%    passed     99.55%
+  48  T53a|SY2c|SI|bovine|17-08-2010            0.00%    passed     99.63%
 ****  TOTAL                                     0.00%  0 sequences failed composition chi2 test (p-value<5%; df=3)
-NOTE: H14ER-115|ASY2c|SI|human|13/03/2014 is identical to ERL-07-155|ASY2c|NI|human|9/01/2007 but kept for subsequent analysis
-NOTE: ERL12-2002|ASY2c|NI|human|26/04/2012 is identical to ERL113692|ASY2c|SI|human|1/09/2011 but kept for subsequent analysis
-Checking for duplicate sequences: done in 0.000156987 secs using 24.84% CPU
+NOTE: H14ER-115|ASY2c|SI|human|13-03-2014 is identical to ERL-07-155|ASY2c|NI|human|9-01-2007 but kept for subsequent analysis
+NOTE: ERL12-2002|ASY2c|NI|human|26-04-2012 is identical to ERL113692|ASY2c|SI|human|1-09-2011 but kept for subsequent analysis
+Checking for duplicate sequences: done in 0.000787772 secs using 4.062% CPU
 
-Creating fast initial parsimony tree by random order stepwise addition...
-0.008 seconds, parsimony score: 1633 (based on 1627 sites)
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.010 seconds
 Perform fast likelihood tree search using GTR+I+G model...
 Estimate model parameters (epsilon = 5.000)
 Perform nearest neighbor interchange...
-Optimizing NNI: done in 0.018805 secs using 99.22% CPU
+Optimizing NNI: done in 0.0167447 secs using 99.2% CPU
 Estimate model parameters (epsilon = 1.000)
 1. Initial log-likelihood: -15573.664
 2. Current log-likelihood: -15569.651
@@ -506,18 +505,18 @@ Estimate model parameters (epsilon = 1.000)
 4. Current log-likelihood: -15563.233
 5. Current log-likelihood: -15560.700
 6. Current log-likelihood: -15558.518
-7. Current log-likelihood: -15556.625
+7. Current log-likelihood: -15556.624
 8. Current log-likelihood: -15554.985
 9. Current log-likelihood: -15553.557
 10. Current log-likelihood: -15552.311
 11. Current log-likelihood: -15551.222
 Optimal log-likelihood: -15550.262
-Rate parameters:  A-C: 1.10737  A-G: 2.63530  A-T: 1.32063  C-G: 0.09936  C-T: 3.29310  G-T: 1.00000
+Rate parameters:  A-C: 1.10736  A-G: 2.63528  A-T: 1.32062  C-G: 0.09936  C-T: 3.29307  G-T: 1.00000
 Base frequencies:  A: 0.168  C: 0.304  G: 0.381  T: 0.147
 Proportion of invariable sites: 0.017
 Gamma shape alpha: 998.446
-Parameters optimization took 11 rounds (0.218 sec)
-Time for fast ML tree search: 0.532 seconds
+Parameters optimization took 11 rounds (0.208 sec)
+Time for fast ML tree search: 0.486 seconds
 
 NOTE: ModelFinder requires 7 MB RAM!
 ModelFinder will test up to 484 DNA models (sample size: 3698) ...
@@ -527,7 +526,7 @@ ModelFinder will test up to 484 DNA models (sample size: 3698) ...
   3  GTR+F+G4      15543.039    102 31290.078    31295.923    31924.064
   4  GTR+F+I+G4    15543.781    103 31293.562    31299.523    31933.763
   5  GTR+F+R2      15542.802    103 31291.603    31297.564    31931.805
-  6  GTR+F+R3      15542.799    105 31295.598    31301.795    31948.231
+  6  GTR+F+R3      15542.799    105 31295.598    31301.795    31948.230
  14  GTR+F+I+R2    15543.145    104 31294.291    31300.369    31940.708
  15  GTR+F+I+R3    15543.104    106 31298.209    31304.526    31957.057
  23  SYM           15703.564    98  31603.127    31608.519    32212.251
@@ -542,7 +541,7 @@ ModelFinder will test up to 484 DNA models (sample size: 3698) ...
  89  TIM3+F        15680.665    99  31559.331    31564.834    32174.670
  90  TIM3+F+I      15680.665    100 31561.331    31566.947    32182.886
  91  TIM3+F+G4     15680.927    100 31561.853    31567.469    32183.408
-111  TIM3e         15789.474    96  31770.948    31776.120    32367.640
+111  TIM3e         15789.474    96  31770.948    31776.120    32367.641
 112  TIM3e+I       15789.475    97  31772.949    31778.230    32375.857
 113  TIM3e+G4      15789.770    97  31773.539    31778.820    32376.447
 133  TIM2+F        15667.012    99  31532.024    31537.527    32147.363
@@ -599,14 +598,14 @@ Bayesian Information Criterion:         GTR+F
 Best-fit model: GTR+F chosen according to BIC
 
 All model information printed to STEC_Clade3.fasta.model.gz
-CPU time for ModelFinder: 5.525 seconds (0h:0m:5s)
-Wall-clock time for ModelFinder: 5.658 seconds (0h:0m:5s)
+CPU time for ModelFinder: 4.794 seconds (0h:0m:4s)
+Wall-clock time for ModelFinder: 4.993 seconds (0h:0m:4s)
 
 NOTE: 0 MB RAM (0 GB) is required!
 Estimate model parameters (epsilon = 0.010)
 1. Initial log-likelihood: -15542.798
 Optimal log-likelihood: -15542.798
-Rate parameters:  A-C: 1.10793  A-G: 2.63526  A-T: 1.31906  C-G: 0.09952  C-T: 3.29299  G-T: 1.00000
+Rate parameters:  A-C: 1.10792  A-G: 2.63524  A-T: 1.31905  C-G: 0.09951  C-T: 3.29296  G-T: 1.00000
 Base frequencies:  A: 0.168  C: 0.304  G: 0.381  T: 0.147
 Parameters optimization took 1 rounds (0.007 sec)
 Wrote distance file to... 
@@ -616,12 +615,12 @@ Total tree length: 0.452
 Total number of iterations: 0
 CPU time used for tree search: 0.000 sec (0h:0m:0s)
 Wall-clock time used for tree search: 0.000 sec (0h:0m:0s)
-Total CPU time used: 0.013 sec (0h:0m:0s)
-Total wall-clock time used: 0.017 sec (0h:0m:0s)
+Total CPU time used: 0.009 sec (0h:0m:0s)
+Total wall-clock time used: 0.022 sec (0h:0m:0s)
 
 Analysis results written to: 
   IQ-TREE report:                STEC_Clade3.fasta.iqtree
   Tree used for ModelFinder:     STEC_Clade3.fasta.treefile
   Screen log file:               STEC_Clade3.fasta.log
 
-Date and Time: Tue Jun 23 16:25:08 2026
+Date and Time: Sun Jun 28 18:24:49 2026

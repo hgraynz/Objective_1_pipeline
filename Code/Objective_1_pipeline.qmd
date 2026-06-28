@@ -572,3 +572,27 @@ modelcompare(res23,Res23)
 # Model 1 is definitely better.
 ```
 
+> roottotip(tree3,dates3, showFig=F)
+$rate
+     date 
+0.9367994 
+
+$ori
+(Intercept) 
+  -82.40205 
+
+$pvalue
+[1] 0.1631
+
+> ## complete plot
+> roottotip(tree3,dates3, showFig=T)
+$rate
+     date 
+0.9367994 
+
+$ori
+(Intercept) 
+  -82.40205 
+
+$pvalue
+[1] 0.159
