@@ -281,7 +281,7 @@ dates=decimal_date(as.Date(meta$date))
 #make sure branch lengths are number of substitutions and not per site 
 ## Check - should be total length of all branchesand much more than 1
 sum(tree$edge.length)
-#[1] 0.2588016 = not 1, need to do next step
+#[1] 0.2588012 = not 1, need to do next step
 
 
 ## if not do this, where multiplyer is length of snp profile
@@ -306,7 +306,7 @@ r2<-roottotip(tree,dates,showFig=T,colored=T,showPredInt='gamma', showText=F,sho
 
 # Alternative model
 ## fit bactdate model on time stamped tree
-res=bactdate(tree,dates, model="arc", nbIts = 90000000, showProgress = T)
+res=bactdate(tree,dates, model="arc", nbIts = 100000000, showProgress = T)
 ## check trace and convergence
 plot(res,'trace')
 mcmc=as.mcmc.resBactDating(res)
@@ -334,26 +334,29 @@ modelcompare(res,Res2)
 > roottotip(tree,dates, showFig=F)
 $rate
      date 
-0.6643144 
+0.6644587 
 
 $ori
 (Intercept) 
-  -83.35468 
+  -83.33039 
 
 $pvalue
-[1] 0.0041
+[1] 0.0048
 
+> ## complete plot
 > roottotip(tree,dates, showFig=T)
 $rate
      date 
-0.6643144 
+0.6644587 
 
 $ori
 (Intercept) 
-  -83.35468 
+  -83.33039 
 
 $pvalue
-[1] 0.0043
+[1] 0.0056
+
+
 
 
 > # Alternative model
@@ -387,7 +390,7 @@ dates2=decimal_date(as.Date(meta2$date))
 #make sure branch lengths are number of substitutions and not per site 
 ## Check - should be total length of all branchesand much more than 1
 sum(tree2$edge.length)
-# [1] 0.2455159 again not 1 
+# [1] 0.2455158 again not 1 
 
 
 ## if not do this, where multiplyer is length of snp profile
@@ -435,31 +438,30 @@ modelcompare(res22,Res22)
 # Model 1 is definitely better.
 ```
 
-> ## parameter estimates
 > roottotip(tree2,dates2, showFig=F)
 $rate
     date 
-1.515432 
+1.515326 
 
 $ori
 (Intercept) 
-   -11.7541 
+  -11.75655 
 
 $pvalue
-[1] 0.0327
+[1] 0.0299
 
 > ## complete plot
 > roottotip(tree2,dates2, showFig=T)
 $rate
     date 
-1.515432 
+1.515326 
 
 $ori
 (Intercept) 
-   -11.7541 
+  -11.75655 
 
 $pvalue
-[1] 0.0329
+[1] 0.0297
 
 > # Alternative model
 > ## fit bactdate model on time stamped tree
