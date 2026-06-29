@@ -8,4 +8,6 @@ The steps include:
 - Adding metadata to core alignment headers
 - Subsetting isolates via the clades
 - Running IQTree model selector
-- Midpoint rooting the trees
+- Midpoint rooting the trees 
+- Bactdating (https://github.com/xavierdidelot/BactDating) 
+- TempEST (https://beast.community/tempest)
