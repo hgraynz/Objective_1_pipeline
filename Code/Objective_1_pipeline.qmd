@@ -306,7 +306,7 @@ r2<-roottotip(tree,dates,showFig=T,colored=T,showPredInt='gamma', showText=F,sho
 
 # Alternative model
 ## fit bactdate model on time stamped tree
-res=bactdate(tree,dates, model="arc", nbIts = 100000000, showProgress = T)
+res=bactdate(tree,dates, model="arc", nbIts = 500000, showProgress = T)
 ## check trace and convergence
 plot(res,'trace')
 mcmc=as.mcmc.resBactDating(res)
