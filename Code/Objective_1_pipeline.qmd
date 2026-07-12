@@ -281,7 +281,7 @@ dates <- decimal_date(as.Date(meta$date, format = "%d/%m/%Y"))
 #make sure branch lengths are number of substitutions and not per site 
 ## Check - should be total length of all branchesand much more than 1
 sum(tree$edge.length)
-#[1] 0.2588025 = not 1, need to do next step
+#[1] 0.2588012 = not 1, need to do next step
 
 
 ## if not do this, where multiplyer is length of snp profile
@@ -312,7 +312,7 @@ plot(res,'trace')
 mcmc=as.mcmc.resBactDating(res)
 effectiveSize(mcmc) ## should be >200 if coverged
 #      mu    sigma    alpha 
-# 201.1904 501.0000 226.8020 
+# 306.3032 501.0000 501.0000 
 # Converged
 
 # Null model
@@ -333,41 +333,37 @@ modelcompare(res,Res2)
 ```
 > roottotip(tree,dates, showFig=F)
 $rate
-     date 
-0.6644587 
+    date 
+1.666485 
 
 $ori
 (Intercept) 
-  -83.33039 
+   1975.725 
 
 $pvalue
-[1] 0.0048
+[1] 5e-04
 
 > ## complete plot
 > roottotip(tree,dates, showFig=T)
 $rate
-     date 
-0.6644587 
+    date 
+1.666485 
 
 $ori
 (Intercept) 
-  -83.33039 
+   1975.725 
 
 $pvalue
-[1] 0.0056
+[1] 2e-04
 
-
-
-
-> # Alternative model
-> ## fit bactdate model on time stamped tree
-> res=bactdate(tree,dates, model="arc", nbIts = 90000000, showProgress = T)
-  |==============================================================================| 100%
-  
+> res=bactdate(tree,dates, model="arc", nbIts = 5000000, showProgress = T)
+  |=====================================================| 100%
+> ## check trace and convergence
+> plot(res,'trace')
 > mcmc=as.mcmc.resBactDating(res)
 > effectiveSize(mcmc) ## should be >200 if coverged
       mu    sigma    alpha 
-166.0129 501.0000 146.1781 
+306.3032 501.0000 501.0000 
 
 ```{r bactdating_clade2}
 ############################## Clade 2 #####################################
