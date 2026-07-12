@@ -2,9 +2,9 @@
 #SBATCH --account massey03727
 #SBATCH --job-name=iqtree # job name (shows up in the queue)
 #SBATCH --output=iqtree.log
-#SBATCH --time=02:00:00 # Walltime (HH:MM:SS)
+#SBATCH --time=00:10:00 # Walltime (HH:MM:SS)
 #SBATCH --cpus-per-task=16 # number of cpus/threads, in our case 4
-#SBATCH --mem=20GB            # Memory in MB
+#SBATCH --mem=10GB            # Memory in MB
 
 module purge
 
