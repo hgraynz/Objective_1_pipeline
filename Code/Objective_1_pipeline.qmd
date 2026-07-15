@@ -557,14 +557,17 @@ r23<-roottotip(tree3,dates3,showFig=T,colored=T,showPredInt='gamma', showText=F,
 
 # Alternative model
 ## fit bactdate model on time stamped tree
-res23=bactdate(tree3,dates3, model="arc", nbIts = 10000000, showProgress = T) ### increase the chain length ### up to 10 mil or so
+res23=bactdate(tree3,dates3, model="arc", nbIts = 100000000, showProgress = T) ### increase the chain length ### up to 10 mil or so
 ## check trace and convergence
 plot(res23,'trace')
 mcmc=as.mcmc.resBactDating(res23)
 effectiveSize(mcmc) ## mu should be >200 if coverged
 # mu     sigma     alpha 
 # 231.46059 702.82088  55.76344 
- 
+
+#effectiveSize(mcmc) ## mu should be >200 if coverged
+#       mu     sigma     alpha 
+# 78.59301 501.00000  62.75671 
 
 
 # Null model
@@ -607,3 +610,8 @@ $ori
 
 $pvalue
 [1] 0.0119
+
+> # Alternative model
+> ## fit bactdate model on time stamped tree
+> res23=bactdate(tree3,dates3, model="arc", nbIts = 10000000, showProgress = T) ### increase the chain length ### up to 10 mil or so
+  |=====================================================| 100%
