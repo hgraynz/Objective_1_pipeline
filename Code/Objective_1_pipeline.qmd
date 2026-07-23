@@ -572,17 +572,17 @@ effectiveSize(mcmc) ## mu should be >200 if coverged
 
 # Null model
 ## fit bactdate model on fixed date tree (null model)
-Res23= bactdate(tree3,rep(2010,length(dates3)), model="arc", nbIts = 10000000, showProgress = T)
+Res23= bactdate(tree3,rep(2010,length(dates3)), model="arc", nbIts = 100000000, showProgress = T)
 ## check trace and convergence
 plot(Res23,'trace')
 mcmc=as.mcmc.resBactDating(Res23)
 effectiveSize(mcmc)
 #         mu      sigma      alpha 
-# 3.270484 501.000000  16.716363 
+#  8.343212 501.000000   6.977849 
 
 modelcompare(res23,Res23)
-# The first model has DIC=1243.65 and the second model has DIC=368638.94.
-# Model 1 is definitely better.
+#The first model has DIC=9221.65 and the second model has DIC=90920.80.
+#Model 1 is definitely better.
 ```
 
 > ## parameter estimates
@@ -621,3 +621,11 @@ $pvalue
 > effectiveSize(mcmc) ## mu should be >200 if coverged
       mu    sigma    alpha 
 368.7413 307.5046 251.3609
+
+
+> ## check trace and convergence
+> plot(Res23,'trace')
+> mcmc=as.mcmc.resBactDating(Res23)
+> effectiveSize(mcmc)
+        mu      sigma      alpha 
+  8.343212 501.000000   6.977849 
